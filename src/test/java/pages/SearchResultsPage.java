@@ -17,10 +17,12 @@ public class SearchResultsPage {
     private final By listOfProducts = By.xpath("//ul[@id='1']//li[@class='productListContent-zAP0Y5msy8OHn5z7T_K_']");
 
 
+    public SearchResultsPage searchResultTextAssertion(String keyword){
+        String actual = getElementText(searchResultText);
 
+        Assert.assertNotNull(actual);
+        Assert.assertEquals(keyword, actual);
 
-    public SearchResultsPage searchResultTextAssertion(){
-        Assert.assertEquals("balata", getElementText(searchResultText));
         return this;
     }
 
@@ -30,9 +32,9 @@ public class SearchResultsPage {
         List<WebElement> products = driver.findElements(listOfProducts);
         Random random = new Random();
 
-        int n = random.nextInt(products.size());
-        System.out.println("rastgele numara " + n);
-        clickAndSwitchToNewTab(products,n);
+        int nextNumber = random.nextInt(products.size());
+        System.out.println("rastgele numara " + nextNumber);
+        clickAndSwitchToNewTab(products, nextNumber);
 
         return this;
     }

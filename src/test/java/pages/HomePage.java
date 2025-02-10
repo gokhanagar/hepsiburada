@@ -15,6 +15,7 @@ public class HomePage {
     private final By searchBar = By.cssSelector("input[type='search']");
     private final By cookieButton = By.cssSelector("button[id='onetrust-accept-btn-handler']");
 
+    // Belki duration dışarıdan parametre olarak verilebilir.
     public HomePage assertHomePage() {
         try {
             clickAndWaitForReload(cookieButton);
@@ -27,23 +28,24 @@ public class HomePage {
         }
     }
 
-    public HomePage searchForProduct() {
+    // Örnek parametre : "balata"
+
+    public HomePage searchForProduct(String keyword) {
         try {
 
             waitForPageToLoad(10);
             waitForDOMStability(10);
-            
-            verifyElementDisplayed(searchBar);
 
+            verifyElementDisplayed(searchBar);
 
             Actions actions = new Actions(driver);
             actions.moveToElement(driver.findElement(searchBar))
-                   .click()
-                   .pause(Duration.ofSeconds(1))
-                   .sendKeys("balata")
-                   .pause(Duration.ofSeconds(1))
-                   .sendKeys(Keys.ENTER)
-                   .perform();
+                    .click()
+                    .pause(Duration.ofSeconds(1))
+                    .sendKeys(keyword)
+                    .pause(Duration.ofSeconds(1))
+                    .sendKeys(Keys.ENTER)
+                    .perform();
 
             waitForDOMStability(2);
 
@@ -52,7 +54,6 @@ public class HomePage {
             throw new RuntimeException("Search operation failed: " + e.getMessage());
         }
     }
-
 
 
 }

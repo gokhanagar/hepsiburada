@@ -23,7 +23,6 @@ public class ProductDetailPage {
 
                 Assert.assertTrue(isElementDisplayed(noReviewText));
                 System.out.println("Found no review text: " + actualText);
-                hasReview = false;
                 return;
             }
 
@@ -31,14 +30,10 @@ public class ProductDetailPage {
                 System.out.println("Found review button, clicking...");
                 clickWithJS(reviewButton);
                 hasReview = true;
-                return;
             }
-            
-            hasReview = false;
             
         } catch (Exception e) {
             System.out.println("Error in checkAndClickIfReviewExists: " + e.getMessage());
-            hasReview = false;
         }
     }
 

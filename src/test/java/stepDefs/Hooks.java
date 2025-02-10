@@ -49,7 +49,7 @@ public class Hooks {
 
 
     @After
-    public void teardownMethod(Scenario scenario){
+    public void tearDownMethod(Scenario scenario){
 
         if (scenario.isFailed()) {
 

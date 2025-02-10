@@ -1,43 +1,16 @@
 package enums;
 
-public enum LINKS {
+public enum Links {
     BASEURL("https://www.hepsiburada.com/");
 
     private String getLink;
 
-    LINKS(String getLink) {
+    Links(String getLink) {
         this.getLink = getLink;
     }
 
     public String getLink() {
         return getLink;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

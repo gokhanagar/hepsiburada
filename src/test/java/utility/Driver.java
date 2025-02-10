@@ -2,7 +2,6 @@ package utility;
 
 import java.time.Duration;
 
-import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -42,10 +41,11 @@ public class Driver {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--disable-notifications");
+        options.addArguments("--window-size=1920,1080");
 
         if (isHeadless) {
             options.addArguments(
-                "--headless",
+                "--headless=new",
                 "--disable-gpu",
                 "--no-sandbox",
                 "--disable-dev-shm-usage"
