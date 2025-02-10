@@ -27,8 +27,7 @@ public class BrowserUtils {
     private static final WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
     public static WebElement waitForVisibility(By locator, int timeout) {
-        return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout))
-                .until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     public static WebElement waitForClickability(By locator, int timeout) {
@@ -45,6 +44,11 @@ public class BrowserUtils {
         } catch (Exception e) {
             throw new RuntimeException("Failed to click element with JavaScript: " + e.getMessage());
         }
+    }
+
+    public static void click(By locator){
+        WebElement element = waitForVisibility(locator, 10);
+        element.click();
     }
 
     public static void sendKeysToElement(By locator, String text) {
@@ -199,15 +203,21 @@ public class BrowserUtils {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInURL));
     }
 
-    public static void switchToWindow(String targetTitle) {
-        String origin = Driver.getDriver().getWindowHandle();
-        for (String handle : Driver.getDriver().getWindowHandles()) {
-            Driver.getDriver().switchTo().window(handle);
-            if (Driver.getDriver().getTitle().equals(targetTitle)) {
-                return;
+    public static void clickAndSwitchToNewTab(List<WebElement> elements, int n) {
+        String originalWindow = driver.getWindowHandle();
+        int originalWindowCount = driver.getWindowHandles().size();
+        elements.get(n).click();
+
+        wait.until(ExpectedConditions.numberOfWindowsToBe(originalWindowCount + 1));
+
+        Set<String> allWindows = driver.getWindowHandles();
+
+        for (String window : allWindows) {
+            if (!originalWindow.contentEquals(window)) {
+                driver.switchTo().window(window);
+                break;
             }
         }
-        Driver.getDriver().switchTo().window(origin);
     }
 
     public static List<String> getElementsText(List<WebElement> list) {

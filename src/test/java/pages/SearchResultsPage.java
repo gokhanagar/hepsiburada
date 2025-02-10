@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 import static stepDefs.Hooks.driver;
-import static utility.BrowserUtils.getElementText;
-import static utility.BrowserUtils.waitForDOMStability;
+import static utility.BrowserUtils.*;
 
 public class SearchResultsPage {
 
@@ -20,21 +20,20 @@ public class SearchResultsPage {
 
 
     public SearchResultsPage searchResultTextAssertion(){
-        Assert.assertEquals("iphone", getElementText(searchResultText));
+        Assert.assertEquals("balata", getElementText(searchResultText));
         return this;
     }
 
 
-    public SearchResultsPage selectARandomProduct(){
+    public SearchResultsPage selectARandomProduct() throws InterruptedException {
 
         List<WebElement> products = driver.findElements(listOfProducts);
         Random random = new Random();
 
         int n = random.nextInt(products.size());
-        System.out.println("rastgele sayi " + n);
-        products.get(n).click();
-        waitForDOMStability(2);
-        
+        System.out.println("rastgele numara " + n);
+        clickAndSwitchToNewTab(products,n);
+
         return this;
     }
 

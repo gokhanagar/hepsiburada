@@ -9,6 +9,8 @@ public abstract class BasePage {
 
     private HomePage homePage;
     private SearchResultsPage searchResultsPage;
+    private ProductDetailPage productDetailPage;
+    private ProductReviewsPage productReviewsPage;
 
     public HomePage homePage() {
         if (homePage == null){
@@ -24,9 +26,19 @@ public abstract class BasePage {
         return searchResultsPage;
     }
 
+    public ProductDetailPage productDetailPage(){
+        if(productDetailPage == null){
+            productDetailPage = new ProductDetailPage();
+        }
+        return productDetailPage;
+    }
 
-
-
+    public ProductReviewsPage productReviewsPage(){
+        if (productReviewsPage == null){
+            productReviewsPage = new ProductReviewsPage();
+        }
+        return productReviewsPage;
+    }
 
 
 

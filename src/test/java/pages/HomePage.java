@@ -40,7 +40,7 @@ public class HomePage {
             actions.moveToElement(driver.findElement(searchBar))
                    .click()
                    .pause(Duration.ofSeconds(1))
-                   .sendKeys("iphone")
+                   .sendKeys("balata")
                    .pause(Duration.ofSeconds(1))
                    .sendKeys(Keys.ENTER)
                    .perform();
