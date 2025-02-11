@@ -30,12 +30,15 @@ jobs:
       if: always()
       run: |
         mvn allure:report
+        mvn allure:aggregate
         
     - name: Upload Allure Report
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: allure-report
-        path: target/site/allure-maven-plugin/
+        path: |
+          target/allure-results/
+          target/site/allure-maven-plugin/
         retention-days: 30 
         
