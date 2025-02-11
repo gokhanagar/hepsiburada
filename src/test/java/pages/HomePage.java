@@ -6,8 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static stepDefs.Hooks.driver;
 import static utility.BrowserUtils.verifyElementDisplayed;
@@ -26,25 +24,16 @@ public class HomePage {
             System.out.println("Waiting for page to load...");
             waitForPageToLoad(20);
             
+            System.out.println("Checking for security page...");
+            if (driver.getCurrentUrl().contains("security")) {
+                System.out.println("Security page detected, retrying...");
+                driver.navigate().to("https://www.hepsiburada.com");
+                waitForPageToLoad(20);
+            }
+            
             System.out.println("Waiting for DOM stability...");
             waitForDOMStability(5);
             
-            // Ana içeriğin yüklenmesini bekle
-            System.out.println("Waiting for main content...");
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-            wait.until(ExpectedConditions.presenceOfElementLocated(mainContent));
-            
-            // JavaScript ile sayfanın hazır olduğunu kontrol et
-            System.out.println("Checking page readiness...");
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            wait.until(webDriver -> js.executeScript("return document.readyState").equals("complete"));
-            
-            // Sayfayı en üste scroll yap
-            System.out.println("Scrolling to top...");
-            js.executeScript("window.scrollTo(0, 0)");
-            Thread.sleep(1000); // Scroll sonrası kısa bekleme
-            
-            // Element var mı kontrol et
             System.out.println("Checking for popular product text...");
             if (!isElementPresent(selectedPopularProductText)) {
                 System.out.println("Popular product text not found, refreshing page...");
@@ -59,7 +48,6 @@ public class HomePage {
             return this;
         } catch (Exception e) {
             System.out.println("Error in assertHomePage: " + e.getMessage());
-            // Hata durumunda screenshot al
             takeScreenshot("homepage_error");
             throw new RuntimeException("Failed to assert home page: " + e.getMessage());
         }

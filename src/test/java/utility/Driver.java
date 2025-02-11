@@ -1,7 +1,6 @@
 package utility;
 
 import java.time.Duration;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,34 +41,34 @@ public class Driver {
 
     private static ChromeDriver createChromeDriver(boolean isHeadless) {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--disable-notifications");
-        options.addArguments("--window-size=1920,1080");
         
-        // Cookie ve popup ayarları
+        // Temel ayarlar
         options.addArguments(
+            "--remote-allow-origins=*",
+            "--disable-notifications",
+            "--window-size=1920,1080",
             "--disable-popup-blocking",
+            "--disable-blink-features=AutomationControlled",  // Automation bayrağını gizle
             "--disable-infobars",
-            "--disable-gpu",
-            "--disable-extensions",
-            "--no-sandbox",
-            "--disable-dev-shm-usage"
+            "--disable-extensions"
         );
         
-        // Cookie tercihlerini ayarla
+        // Bot tespitini engelleme
+        options.addArguments("--disable-blink-features=AutomationControlled");
         Map<String, Object> prefs = new HashMap<>();
-        prefs.put("profile.default_content_setting_values.cookies", 1);
-        prefs.put("profile.cookie_controls_mode", 1);
-        prefs.put("profile.block_third_party_cookies", false);
-        prefs.put("profile.default_content_settings.popups", 0);
-        prefs.put("profile.default_content_setting_values.notifications", 1);
+        prefs.put("credentials_enable_service", false);
+        prefs.put("profile.password_manager_enabled", false);
         options.setExperimentalOption("prefs", prefs);
         
-        // Ek Chrome flags
-        options.addArguments("--start-maximized");
-        options.addArguments("--disable-blink-features=AutomationControlled");
-        options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
+        // Automation flags'i gizle
+        options.setExperimentalOption("excludeSwitches", 
+            new String[]{"enable-automation", "enable-logging"});
+        options.setExperimentalOption("useAutomationExtension", false);
         
+        // User agent değiştir
+        options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
+            "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36");
+
         if (isHeadless) {
             options.addArguments(
                 "--headless=new",
