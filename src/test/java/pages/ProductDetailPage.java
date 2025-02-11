@@ -1,7 +1,6 @@
 package pages;
 
 import org.junit.Assert;
-import org.junit.Assume;
 import org.openqa.selenium.By;
 
 import static utility.BrowserUtils.clickWithJS;

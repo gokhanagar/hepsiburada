@@ -5,10 +5,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import pages.BasePage;
 
 import static stepDefs.Hooks.driver;
-
+@Severity(SeverityLevel.NORMAL)
 public class ProductReview extends BasePage {
     @Given("user navigate to hepsiburada.com")
     public void userNavigateToHepsiburadaCom() {

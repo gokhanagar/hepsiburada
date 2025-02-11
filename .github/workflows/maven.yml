@@ -23,16 +23,29 @@ jobs:
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1
     
-    - name: Run Tests and Generate Allure Report
-      run: |
-        mvn clean test -Dbrowser=chrome -Dheadless=true
-        mvn allure:report
+    - name: Run Tests
+      run: mvn clean test -Dbrowser=chrome -Dheadless=true
         
+    - name: Get Allure history
+      uses: actions/checkout@v4
+      if: always()
+      continue-on-error: true
+      with:
+        ref: gh-pages
+        path: gh-pages
+    
+    - name: Generate Allure Report
+      run: |
+        mvn allure:report
+        mvn allure:aggregate
+      
     - name: Store Allure Report
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: allure-report
-        path: target/allure-report
+        path: |
+          target/site/allure-maven-plugin/
+          target/allure-results/
         retention-days: 30
         
