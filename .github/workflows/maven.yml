@@ -25,11 +25,19 @@ jobs:
     
     - name: Run Tests
       run: |
-        # Chrome'u daha yüksek çözünürlükte başlat
+        # Xvfb'yi başlat
+        sudo apt-get install -y xvfb
         export DISPLAY=:99
         Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
-        # Testleri çalıştır
-        mvn clean test -Dbrowser=chrome -Dheadless=true -Dselenium.window-size=1920,1080
+        sleep 3  # Xvfb'nin başlaması için bekle
+        
+        # Chrome'u yapılandır ve testleri çalıştır
+        mvn clean test \
+          -Dbrowser=chrome \
+          -Dheadless=true \
+          -Dwebdriver.chrome.whitelistedIps="" \
+          -Dselenium.window-size=1920,1080 \
+          -Dwebdriver.chrome.arguments="--no-sandbox,--disable-dev-shm-usage"
         
     - name: Get Allure history
       uses: actions/checkout@v4
