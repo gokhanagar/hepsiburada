@@ -8,19 +8,17 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
 import static stepDefs.Hooks.driver;
-import static utility.BrowserUtils.verifyElementDisplayed;
-import static utility.BrowserUtils.waitForDOMStability;
-import static utility.BrowserUtils.waitForPageToLoad;
+import static utility.BrowserUtils.*;
 
 public class HomePage {
 
     private final By selectedPopularProductText = By.xpath("(//h3[@data-test-id='Recommendation-title'])[1]");
     private final By searchBar = By.cssSelector("input[type='search']");
     private final By cookieButton = By.cssSelector("button[id='onetrust-accept-btn-handler']");
-    private final By mainContent = By.cssSelector("main"); // Ana içerik container'ı
 
     public HomePage assertHomePage() {
-        try {
+
+            //driver.findElement(cookieButton).click();
             System.out.println("Waiting for page to load...");
             waitForPageToLoad(20);
             
@@ -46,40 +44,13 @@ public class HomePage {
             verifyElementDisplayed(selectedPopularProductText);
             
             return this;
-        } catch (Exception e) {
-            System.out.println("Error in assertHomePage: " + e.getMessage());
-            takeScreenshot("homepage_error");
-            throw new RuntimeException("Failed to assert home page: " + e.getMessage());
-        }
-    }
 
-    // Yardımcı metod
-    private boolean isElementPresent(By locator) {
-        try {
-            driver.findElement(locator);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    private void takeScreenshot(String name) {
-        try {
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            String screenshot = (String) js.executeScript(
-                "return document.documentElement.outerHTML"
-            );
-            System.out.println("Page Source at error:");
-            System.out.println(screenshot);
-        } catch (Exception e) {
-            System.out.println("Failed to take screenshot: " + e.getMessage());
-        }
     }
 
     // Örnek parametre : "balata"
 
     public HomePage searchForProduct(String keyword) {
-        try {
+
             waitForPageToLoad(10);
             waitForDOMStability(10);
 
@@ -97,9 +68,7 @@ public class HomePage {
             waitForDOMStability(2);
 
             return this;
-        } catch (Exception e) {
-            throw new RuntimeException("Search operation failed: " + e.getMessage());
-        }
+
     }
 
 }

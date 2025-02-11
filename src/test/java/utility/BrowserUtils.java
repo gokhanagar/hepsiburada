@@ -89,6 +89,15 @@ public class BrowserUtils {
         }
     }
 
+    public static boolean isElementPresent(By locator) {
+        try {
+            driver.findElement(locator);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public static void waitForElementToBeClickableAndClick(By locator) {
         try {
             WebElement element = waitForClickability(locator, 10);

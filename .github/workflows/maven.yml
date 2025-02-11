@@ -1,6 +1,7 @@
 name: Java CI with Maven
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
@@ -29,9 +30,9 @@ jobs:
         sudo apt-get install -y xvfb
         export DISPLAY=:99
         Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
-        sleep 3  # Xvfb'nin başlaması için bekle
+        sleep 3  
         
-        # Chrome'u yapılandır ve testleri çalıştır
+        
         mvn clean test \
           -Dbrowser=chrome \
           -Dheadless=true \
@@ -52,13 +53,12 @@ jobs:
         mvn allure:report
         mvn allure:aggregate
       
-    - name: Store Allure Report
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: allure-report
-        path: |
-          target/site/allure-maven-plugin/
-          target/allure-results/
+        - name: Store Allure Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: |
+             target/site/allure-maven-plugin/
+             target/allure-results/
         retention-days: 30
-        
