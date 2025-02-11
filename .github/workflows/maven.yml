@@ -24,7 +24,12 @@ jobs:
       uses: browser-actions/setup-chrome@v1
     
     - name: Run Tests
-      run: mvn clean test -Dbrowser=chrome -Dheadless=true
+      run: |
+        # Chrome'u daha yüksek çözünürlükte başlat
+        export DISPLAY=:99
+        Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+        # Testleri çalıştır
+        mvn clean test -Dbrowser=chrome -Dheadless=true -Dselenium.window-size=1920,1080
         
     - name: Get Allure history
       uses: actions/checkout@v4
