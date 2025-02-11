@@ -7,8 +7,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
 import static stepDefs.Hooks.driver;
-import static utility.BrowserUtils.clickAndWaitForReload;
-import static utility.BrowserUtils.isElementDisplayed;
 import static utility.BrowserUtils.verifyElementDisplayed;
 import static utility.BrowserUtils.waitForDOMStability;
 import static utility.BrowserUtils.waitForPageToLoad;
@@ -23,7 +21,7 @@ public class HomePage {
     public HomePage assertHomePage() {
         try {
             waitForDOMStability(2);
-            
+            /*
             // Cookie butonu hala görünüyorsa tıkla
             if (isElementDisplayed(cookieButton)) {
                 try {
@@ -32,6 +30,8 @@ public class HomePage {
                     System.out.println("Cookie button click failed, continuing...");
                 }
             }
+
+             */
 
             verifyElementDisplayed(selectedPopularProductText);
             return this;
