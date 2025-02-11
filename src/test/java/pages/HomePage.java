@@ -47,7 +47,6 @@ public class HomePage {
 
     }
 
-    // Örnek parametre : "balata"
 
     public HomePage searchForProduct(String keyword) {
 

@@ -26,12 +26,10 @@ jobs:
     
     - name: Run Tests
       run: |
-        # Xvfb'yi başlat
         sudo apt-get install -y xvfb
         export DISPLAY=:99
         Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
-        sleep 3  
-        
+        sleep 3
         
         mvn clean test \
           -Dbrowser=chrome \
@@ -39,26 +37,15 @@ jobs:
           -Dwebdriver.chrome.whitelistedIps="" \
           -Dselenium.window-size=1920,1080 \
           -Dwebdriver.chrome.arguments="--no-sandbox,--disable-dev-shm-usage"
-        
-    - name: Get Allure history
-      uses: actions/checkout@v4
-      if: always()
-      continue-on-error: true
-      with:
-        ref: gh-pages
-        path: gh-pages
     
     - name: Generate Allure Report
-      run: |
-        mvn allure:report
-        mvn allure:aggregate
+      if: always()
+      run: mvn allure:report
       
-        - name: Store Allure Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report
-          path: |
-             target/site/allure-maven-plugin/
-             target/allure-results/
+    - name: Store Allure Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: allure-report
+        path: target/site/allure-maven-plugin
         retention-days: 30
