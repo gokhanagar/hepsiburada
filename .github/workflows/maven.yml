@@ -28,16 +28,13 @@ jobs:
       
     - name: Generate Allure Report
       if: always()
-      run: |
-        mvn allure:report
+      run: mvn allure:report
         
     - name: Upload Test Results
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: allure-results
-        path: |
-          target/allure-results
-          target/allure-report
+        path: target/allure-report
         retention-days: 30 
         

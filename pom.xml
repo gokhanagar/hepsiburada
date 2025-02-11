@@ -79,14 +79,11 @@
                 <version>2.12.0</version>
                 <configuration>
                     <reportVersion>${allure.version}</reportVersion>
-                    <resultsDirectory>allure-results</resultsDirectory>
-                    <reportDirectory>target/allure-report</reportDirectory>
-                    <systemProperties>
-                        <property>
-                            <name>allure.results.directory</name>
-                            <value>target/allure-results</value>
-                        </property>
-                    </systemProperties>
+                    <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+                    <reportDirectory>${project.build.directory}/allure-report</reportDirectory>
+                    <properties>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                    </properties>
                 </configuration>
             </plugin>
         </plugins>
