@@ -1,6 +1,9 @@
 package utility;
 
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -42,7 +45,31 @@ public class Driver {
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--disable-notifications");
         options.addArguments("--window-size=1920,1080");
-
+        
+        // Cookie ve popup ayarları
+        options.addArguments(
+            "--disable-popup-blocking",
+            "--disable-infobars",
+            "--disable-gpu",
+            "--disable-extensions",
+            "--no-sandbox",
+            "--disable-dev-shm-usage"
+        );
+        
+        // Cookie tercihlerini ayarla
+        Map<String, Object> prefs = new HashMap<>();
+        prefs.put("profile.default_content_setting_values.cookies", 1);
+        prefs.put("profile.cookie_controls_mode", 1);
+        prefs.put("profile.block_third_party_cookies", false);
+        prefs.put("profile.default_content_settings.popups", 0);
+        prefs.put("profile.default_content_setting_values.notifications", 1);
+        options.setExperimentalOption("prefs", prefs);
+        
+        // Ek Chrome flags
+        options.addArguments("--start-maximized");
+        options.addArguments("--disable-blink-features=AutomationControlled");
+        options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
+        
         if (isHeadless) {
             options.addArguments(
                 "--headless=new",
