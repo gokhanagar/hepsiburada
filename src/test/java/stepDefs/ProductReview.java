@@ -65,6 +65,11 @@ public class ProductReview extends BasePage {
         Assert.assertEquals(expectedMessage, actualResult);
     }
 
+    @And("get main product price to compare")
+    public void getMainProductPriceToCompare() {
+        productDetailPage().getpriceText();
+    }
+
     @And("switch to the other sellers tab")
     public void switchToTheOtherSellersTab() {
         productDetailPage().switchToOtherSellersTab();
@@ -83,4 +88,6 @@ public class ProductReview extends BasePage {
         String actualResult = getElementText(productCartPage().getProductAddedToCartText());
         Assert.assertEquals(expectedMessage, actualResult);
     }
+
+
 }
