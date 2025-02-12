@@ -15,7 +15,7 @@ import static utility.BrowserUtils.getElementText;
 import static utility.BrowserUtils.verifyElementDisplayed;
 
 @Severity(SeverityLevel.NORMAL)
-public class ProductReview extends BasePage {
+public class ReviewSteps extends BasePage {
 
     @Given("user navigate to hepsiburada.com")
     public void userNavigateToHepsiburadaCom() {
@@ -65,21 +65,7 @@ public class ProductReview extends BasePage {
         Assert.assertEquals(expectedMessage, actualResult);
     }
 
-    @And("get main product price to compare")
-    public void getMainProductPriceToCompare() {
-        productDetailPage().getpriceText();
-    }
 
-    @And("switch to the other sellers tab")
-    public void switchToTheOtherSellersTab() {
-        productDetailPage().switchToOtherSellersTab();
-    }
-
-    @And("add the cheapest product to the cart")
-    public void addTheCheapestProductToTheCart() {
-        otherSellersPage().addLowestPriceToCart();
-
-    }
 
 
 

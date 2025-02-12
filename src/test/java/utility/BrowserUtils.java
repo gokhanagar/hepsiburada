@@ -56,36 +56,6 @@ public class BrowserUtils {
         }
     }
 
-    public static void hover(By locator) {
-        try {
-            WebElement element = waitForVisibility(locator, 10);
-            Actions actions = new Actions(Driver.getDriver());
-            actions.moveToElement(element).perform();
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to hover over element: " + e.getMessage());
-        }
-    }
-
-    public static void scrollToElement(By locator) {
-        try {
-            WebElement element = waitForVisibility(locator, 10);
-            ((JavascriptExecutor) Driver.getDriver())
-                .executeScript("arguments[0].scrollIntoView(true);", element);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to scroll to element: " + e.getMessage());
-        }
-    }
-
-
-    public static boolean isElementPresent(By locator) {
-        try {
-            driver.findElement(locator);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
 
     public static String getElementText(By locator) {
         try {
@@ -130,10 +100,10 @@ public class BrowserUtils {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInURL));
     }
 
-    public static void clickAndSwitchToNewTab(List<WebElement> elements, int n) {
+    public static void clickAndSwitchToNewTab(List<WebElement> elements, int nextNumber) {
         String originalWindow = driver.getWindowHandle();
         int originalWindowCount = driver.getWindowHandles().size();
-        elements.get(n).click();
+        elements.get(nextNumber).click();
 
         wait.until(ExpectedConditions.numberOfWindowsToBe(originalWindowCount + 1));
 

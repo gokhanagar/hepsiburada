@@ -166,7 +166,7 @@ public class OtherSellersPage extends BasePage{
         }
     }
 
-    private int convertPriceToInteger(String priceText) {
+    public int convertPriceToInteger(String priceText) {
         try {
             System.out.println("Converting price text: " + priceText);
             if (priceText == null || priceText.trim().isEmpty()) {

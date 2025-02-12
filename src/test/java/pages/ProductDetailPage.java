@@ -16,11 +16,12 @@ public class ProductDetailPage extends BasePage{
     private final By reviewButton = By.xpath("//div[@data-test-id='has-review']/a");
     private final By otherSellersText = By.xpath("//div[@class='vzN3xHW3ClslJV_iYDc1']//span");
     private final By otherSellersSeeAllButton = By.xpath("//div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE']");
-    private final By defaultPriceText = By.xpath("//div[@data-test-id='default-price']//div[@class='z7kokklsVwh0K5zFWjIO']");
+    private final By defaultPriceText = By.xpath("(//div[@data-test-id='default-price']/div)[1]");
     private final By specialPriceText = By.xpath("//div[@data-test-id='checkout-price']//div[@class='bWwoI8vknB6COlRVbpRj']");
     private final By productAddToCartButton = By.cssSelector("button[data-test-id='addToCart']");
-    
+    private final By shoppingCartButton = By.xpath("//*[@id='shoppingCart']");
 
+    public By productAddToCartButton() {return productAddToCartButton;}
     private void checkAndClickIfReviewExists() {
         try {
             System.out.println("Checking for reviews...");
@@ -70,7 +71,6 @@ public class ProductDetailPage extends BasePage{
                 clickWithJS(otherSellersSeeAllButton);
                 waitForDOMStability(20);
                 hasOtherSellers = true;
-                return;
             }
         } catch (Exception e) {
             System.out.println("Error in checkAndClickIfOtherSellersExists: " + e.getMessage());
@@ -111,9 +111,17 @@ public class ProductDetailPage extends BasePage{
         return mainProductPrice;
     }
 
-    public boolean hasOtherSellers() {return hasOtherSellers;}
-    public By productAddToCartButton() {
-        return productAddToCartButton;
+    public int getMainProductPriceNumber() {
+        return otherSellersPage().convertPriceToInteger(mainProductPrice);
     }
+
+    public void addProductToCart(){
+        clickWithJS(productAddToCartButton);
+        waitForDOMStability(5);
+        clickWithJS(shoppingCartButton);
+        waitForDOMStability(5);
+    }
+
+
 
 }
