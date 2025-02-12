@@ -17,7 +17,7 @@ public class OtherSellersPage extends BasePage{
     private final By closeButton = By.cssSelector("div[data-test-id='drawer-close']");
 
     
-    // Diğer satıcılar listesi container'ı
+    // Diğer satıcılar listesi container'ı/
     private final By merchantsContainer = By.xpath("//a[contains(@data-test-id, 'merchant-name')]");
     
     // Fiyat listesi - container içinde
@@ -27,17 +27,15 @@ public class OtherSellersPage extends BasePage{
     
     // Sepete ekle butonları - container içinde
     private final By otherSellersProductAddToCartButton = By.xpath(
-        "//button[text()='Sepete ekle']"
-    );
+        "//button[text()='Sepete ekle']");
+
 
 
 
     private List<Integer> getAllSellerPrices() {
         try {
-            // Diğer satıcılar container'ının yüklenmesini bekle
             waitForDOMStability(2);
             
-            // Container'ın görünür olmasını bekle
             if (!isElementDisplayed(merchantsContainer)) {
                 System.out.println("Merchants container not found");
                 return new ArrayList<>();
@@ -48,11 +46,11 @@ public class OtherSellersPage extends BasePage{
 
             System.out.println("Found " + priceElements.size() + " price elements");
             
-            // Tüm fiyatları işle
-            for (WebElement element : priceElements) {
+            // İlk fiyatı atla (ana ürün fiyatı)
+            for (int i = 1; i < priceElements.size(); i++) {
                 try {
-                    String priceText = element.getText();
-                    System.out.println("Found price: " + priceText);
+                    String priceText = priceElements.get(i).getText();
+                    System.out.println("Found price at index " + i + ": " + priceText);
                     if (!priceText.trim().isEmpty()) {
                         int price = convertPriceToInteger(priceText);
                         prices.add(price);
@@ -62,7 +60,7 @@ public class OtherSellersPage extends BasePage{
                 }
             }
 
-            System.out.println("Processed prices: " + prices);
+            System.out.println("Processed prices (excluding main product): " + prices);
             return prices;
         } catch (Exception e) {
             System.out.println("Error getting seller prices: " + e.getMessage());
@@ -95,18 +93,29 @@ public class OtherSellersPage extends BasePage{
     private void clickSellerButton(int targetPrice, List<Integer> prices, List<WebElement> buttons) {
         try {
             System.out.println("Looking for button with price: " + targetPrice);
-            System.out.println("Total prices: " + prices.size());
-            System.out.println("Total buttons: " + buttons.size());
             
-            for (int i = 0; i < Math.min(prices.size(), buttons.size()); i++) {
+            // Modal'ın tamamen yüklenmesini bekle
+            waitForDOMStability(3);
+            
+            // Butonları yeniden al (modal yüklendikten sonra)
+            List<WebElement> currentButtons = driver.findElements(otherSellersProductAddToCartButton);
+            System.out.println("Total prices: " + prices.size());
+            System.out.println("Total buttons found: " + currentButtons.size());
+            
+            // Fiyat ve buton eşleştirmesi
+            for (int i = 0; i < prices.size(); i++) {
                 System.out.println("Checking price at index " + i + ": " + prices.get(i));
                 if (prices.get(i) == targetPrice) {
                     System.out.println("Found matching price at index: " + i);
-                    WebElement button = buttons.get(i);
-                    if (button.isDisplayed() && button.isEnabled()) {
-                        button.click();
-                        waitForDOMStability(1);
-                        return;
+                    
+                    // Buton index'ini kontrol et
+                    if (i < currentButtons.size()) {
+                        WebElement button = currentButtons.get(i);
+                        if (button.isDisplayed()) {
+                            waitForDOMStability(1);
+                            button.click();
+                            return;
+                        }
                     }
                 }
             }
@@ -126,18 +135,19 @@ public class OtherSellersPage extends BasePage{
             System.out.println("Main product price : " + mainPrice);
             int mainProductPrice = convertPriceToInteger(mainPrice);
             
+            // Modal'ın yüklenmesini bekle
+            waitForDOMStability(3);
+            
             // Diğer satıcıların fiyatlarını al
             List<Integer> otherPrices = getAllSellerPrices();
             System.out.println("Other seller prices: " + otherPrices);
             
-            // Eğer diğer satıcı fiyatı yoksa ana ürünü ekle
             if (otherPrices.isEmpty()) {
                 System.out.println("No other seller prices found, adding main product to cart");
                 clickWithJS(productDetailPage().productAddToCartButton());
                 return;
             }
             
-            // En düşük fiyatı bul
             int minOtherPrice = Collections.min(otherPrices);
             System.out.println("Minimum other seller price: " + minOtherPrice);
             System.out.println("Main product price: " + mainProductPrice);
@@ -145,12 +155,10 @@ public class OtherSellersPage extends BasePage{
             if (mainProductPrice <= minOtherPrice) {
                 System.out.println("Main product has the best price, adding to cart...");
                 addMainProductToCart();
-
             } else {
                 System.out.println("Found better price from other seller, adding to cart...");
-                List<WebElement> buttons = driver.findElements(otherSellersProductAddToCartButton);
-                clickSellerButton(minOtherPrice, otherPrices, buttons);
-
+                // Butonları direkt olarak clickSellerButton'a gönderme
+                clickSellerButton(minOtherPrice, otherPrices, new ArrayList<>());
             }
         } catch (Exception e) {
             System.out.println("Error in addLowestPriceToCart: " + e.getMessage());
