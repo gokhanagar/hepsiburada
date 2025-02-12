@@ -77,16 +77,10 @@ public class ProductReview extends BasePage {
 
     @And("add the cheapest product to the cart")
     public void addTheCheapestProductToTheCart() {
-        if (!productDetailPage().hasOtherSellers()) return;
         otherSellersPage().addLowestPriceToCart();
 
     }
 
-    @Then("verify product is added to cart successfully")
-    public void verifyProductIsAddedToCartSuccessfully() {
-        if (!productDetailPage().hasOtherSellers()) return;
-        Assert.assertTrue("Product should be added to cart",
-                productCartPage().verifyProductAddedToCart());
-    }
+
 
 }

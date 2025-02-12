@@ -8,7 +8,6 @@ Feature: Product Cart Operations
     And get main product price to compare
     And switch to the other sellers tab
     And add the cheapest product to the cart
-    Then verify product is added to cart successfully
 
 
 

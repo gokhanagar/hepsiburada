@@ -2,7 +2,6 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import static utility.BrowserUtils.clickWithJS;
 import static utility.BrowserUtils.getElementText;
@@ -17,8 +16,10 @@ public class ProductDetailPage extends BasePage{
     private final By reviewButton = By.xpath("//div[@data-test-id='has-review']/a");
     private final By otherSellersText = By.xpath("//div[@class='vzN3xHW3ClslJV_iYDc1']//span");
     private final By otherSellersSeeAllButton = By.xpath("//div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE']");
-    private final By priceText = By.xpath("//div[@data-test-id='default-price']//div[@class='z7kokklsVwh0K5zFWjIO']");
+    private final By defaultPriceText = By.xpath("//div[@data-test-id='default-price']//div[@class='z7kokklsVwh0K5zFWjIO']");
+    private final By specialPriceText = By.xpath("//div[@data-test-id='checkout-price']//div[@class='bWwoI8vknB6COlRVbpRj']");
     private final By productAddToCartButton = By.cssSelector("button[data-test-id='addToCart']");
+    
 
     private void checkAndClickIfReviewExists() {
         try {
@@ -83,14 +84,28 @@ public class ProductDetailPage extends BasePage{
     }
 
     public String getpriceText() {
-        mainProductPrice = getElementText(priceText);
-        System.out.println("Found main product price: " + mainProductPrice);
-        return mainProductPrice;
+        try {
+            // Önce özel fiyatı kontrol et
+            if (isElementDisplayed(specialPriceText)) {
+                mainProductPrice = getElementText(specialPriceText);
+                System.out.println("Found special price: " + mainProductPrice);
+                return mainProductPrice;
+            }
+            
+            // Özel fiyat yoksa normal fiyatı al
+            mainProductPrice = getElementText(defaultPriceText);
+            System.out.println("Found default price: " + mainProductPrice);
+            return mainProductPrice;
+            
+        } catch (Exception e) {
+            System.out.println("Error getting price: " + e.getMessage());
+            throw e;
+        }
     }
 
     public String getMainProductPrice() {
         if (mainProductPrice == null || mainProductPrice.isEmpty()) {
-            mainProductPrice = getElementText(priceText);
+            mainProductPrice = getpriceText();
         }
         System.out.println("Getting main product price: " + mainProductPrice);
         return mainProductPrice;

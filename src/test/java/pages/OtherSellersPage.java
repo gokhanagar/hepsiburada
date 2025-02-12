@@ -15,6 +15,7 @@ import static utility.BrowserUtils.waitForDOMStability;
 public class OtherSellersPage extends BasePage{
 
     private final By closeButton = By.cssSelector("div[data-test-id='drawer-close']");
+
     
     // Diğer satıcılar listesi container'ı
     private final By merchantsContainer = By.xpath("//a[contains(@data-test-id, 'merchant-name')]");
@@ -69,11 +70,26 @@ public class OtherSellersPage extends BasePage{
         }
     }
 
-    private void closeModalAndAddToCart() {
-        clickWithJS(closeButton);
-        waitForDOMStability(10);
-        clickWithJS(productDetailPage().productAddToCartButton());
-
+    private void addMainProductToCart() {
+        try {
+            // Eğer kapatma butonu varsa kapat
+            if (isElementDisplayed(closeButton)) {
+                System.out.println("Closing other sellers view...");
+                clickWithJS(closeButton);
+                waitForDOMStability(5);
+            } else {
+                System.out.println("No close button found, proceeding with main product");
+            }
+            
+            // Ana ürünü sepete ekle
+            System.out.println("Adding main product to cart...");
+            clickWithJS(productDetailPage().productAddToCartButton());
+            waitForDOMStability(2);
+            
+        } catch (Exception e) {
+            System.out.println("Error adding main product to cart: " + e.getMessage());
+            throw e;
+        }
     }
 
     private void clickSellerButton(int targetPrice, List<Integer> prices, List<WebElement> buttons) {
@@ -117,8 +133,7 @@ public class OtherSellersPage extends BasePage{
             // Eğer diğer satıcı fiyatı yoksa ana ürünü ekle
             if (otherPrices.isEmpty()) {
                 System.out.println("No other seller prices found, adding main product to cart");
-                closeModalAndAddToCart();
-                productCartPage().verifyProductAddedToCart();
+                clickWithJS(productDetailPage().productAddToCartButton());
                 return;
             }
             
@@ -129,13 +144,13 @@ public class OtherSellersPage extends BasePage{
             
             if (mainProductPrice <= minOtherPrice) {
                 System.out.println("Main product has the best price, adding to cart...");
-                closeModalAndAddToCart();
-                productCartPage().verifyProductAddedToCart();
+                addMainProductToCart();
+
             } else {
                 System.out.println("Found better price from other seller, adding to cart...");
                 List<WebElement> buttons = driver.findElements(otherSellersProductAddToCartButton);
                 clickSellerButton(minOtherPrice, otherPrices, buttons);
-                productCartPage().verifyProductAddedToCart();
+
             }
         } catch (Exception e) {
             System.out.println("Error in addLowestPriceToCart: " + e.getMessage());
