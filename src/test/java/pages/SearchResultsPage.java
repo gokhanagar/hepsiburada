@@ -16,18 +16,12 @@ public class SearchResultsPage {
     private final By searchResultText = By.cssSelector("h1[data-test-id='header-h1']");
     private final By listOfProducts = By.xpath("//ul[@id='1']//li[@class='productListContent-zAP0Y5msy8OHn5z7T_K_']");
 
-
-    public SearchResultsPage searchResultTextAssertion(String keyword){
-        String actual = getElementText(searchResultText);
-
-        Assert.assertNotNull(actual);
-        Assert.assertEquals(keyword, actual);
-
-        return this;
+    public By searchResultText() {
+        return searchResultText;
     }
 
 
-    public SearchResultsPage selectARandomProduct() throws InterruptedException {
+    public void selectARandomProduct(){
 
         List<WebElement> products = driver.findElements(listOfProducts);
         Random random = new Random();
@@ -35,8 +29,6 @@ public class SearchResultsPage {
         int nextNumber = random.nextInt(products.size());
         System.out.println("rastgele numara " + nextNumber);
         clickAndSwitchToNewTab(products, nextNumber);
-
-        return this;
     }
 
 

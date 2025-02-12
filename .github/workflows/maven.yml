@@ -38,10 +38,17 @@ jobs:
           -Dselenium.window-size=1920,1080 \
           -Dwebdriver.chrome.arguments="--no-sandbox,--disable-dev-shm-usage"
     
+    - name: Generate Allure Report
+      if: always()
+      run: |
+        mvn allure:report
+        mkdir -p allure-report
+        cp -r target/allure-results/* allure-report/
+    
     - name: Store Allure Results
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: allure-results
-        path: target/allure-results
+        name: allure-report
+        path: allure-report
         retention-days: 30

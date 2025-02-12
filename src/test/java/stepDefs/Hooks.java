@@ -47,7 +47,7 @@ public class Hooks {
 
     }
 
-
+    /*
     @After
     public void tearDownMethod(Scenario scenario){
 
@@ -61,6 +61,10 @@ public class Hooks {
         Driver.closeDriver();
 
     }
+
+     */
+
+
 
 
 

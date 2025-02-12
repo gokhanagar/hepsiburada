@@ -5,45 +5,50 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.junit.Assert;
 import pages.BasePage;
 
 import static stepDefs.Hooks.driver;
+import static utility.BrowserUtils.getElementText;
+import static utility.BrowserUtils.verifyElementDisplayed;
+
 @Severity(SeverityLevel.NORMAL)
 public class ProductReview extends BasePage {
+
     @Given("user navigate to hepsiburada.com")
     public void userNavigateToHepsiburadaCom() {
         driver.get(Links.BASEURL.getLink());
     }
 
-    @When("user search for a product which is popular and has comments")
-    public void userSearchForAProductWhichIsPopularAndHasComments() throws InterruptedException {
-        String searchKeyword = "balata";
+
+    @When("user search for {string} which is popular and has comments")
+    public void userSearchForWhichIsPopularAndHasComments(String keyword) {
+        verifyElementDisplayed(homePage().getSelectedPopularProductText());
         homePage()
-                .assertHomePage()
-                .searchForProduct(searchKeyword);
+                .checkAndHandleSecurityRedirect()
+                .acceptCookie()
+                .searchForProduct(keyword);
 
     }
 
-    @And("select a random product from the search results and navigate to the product details page")
-    public void selectARandomProductFromTheSearchResultsAndNavigateToTheProductDetailsPage() throws InterruptedException {
-        String searchKeyword = "balata";
-        searchResultsPage()
-                .searchResultTextAssertion(searchKeyword)
-                .selectARandomProduct();
+    @And("select a random {string} from the search results and navigate to the product details page")
+    public void selectARandomWhichFromTheSearchResultsAndNavigateToTheProductDetailsPage(String expectedMessage){
+        String actualMessage = getElementText(searchResultsPage().searchResultText());
+        Assert.assertEquals(expectedMessage, actualMessage);
+
+        searchResultsPage().selectARandomProduct();
     }
 
-    @And("switch to the Degerlendirmeler tab")
-    public void switchToTheDegerlendirmelerTab() {
+    @And("switch to the Reviews tab")
+    public void switchTotheReviewstab() {
         productDetailPage().switchToDegerlendirmelerTab();
     }
 
-    @And("sort the reviews by En Yeni Degerlendirme")
-    public void sortTheReviewsByEnYeniDegerlendirme() throws InterruptedException {
+    @And("sort the reviews by The Best Reviews")
+    public void sortTheReviewsByTheBestReviews() throws InterruptedException {
         if (!productDetailPage().hasReviews()) return;
-        System.out.println("bu asamaya gecti");
         productReviewsPage().orderCommentsFromBestToWorst();
     }
 
@@ -53,10 +58,29 @@ public class ProductReview extends BasePage {
         productReviewsPage().clickThumbsUpForReview();
     }
 
-    @Then("the Thank You message should be displayed")
-    public void theThankYouMessageShouldBeDisplayed() throws InterruptedException {
+    @Then("{string} message should be displayed")
+    public void messageShouldBeDisplayed(String expectedMessage) {
         if (!productDetailPage().hasReviews()) return;
-        productReviewsPage().assertionResultForReview();
-        Thread.sleep(2000);
+        String actualResult = getElementText(productReviewsPage().getThankYouText());
+        Assert.assertEquals(expectedMessage, actualResult);
+    }
+
+    @And("switch to the other sellers tab")
+    public void switchToTheOtherSellersTab() {
+        productDetailPage().switchToOtherSellersTab();
+    }
+
+    @And("add the cheapest product to the cart")
+    public void addTheCheapestProductToTheCart() {
+        if (!productDetailPage().hasOtherSellers()) return;
+        otherSellersPage().addLowestPriceToCart();
+
+    }
+
+    @Then("confirming that the product is in the cart with {string} message")
+    public void confirmingThatTheProductIsInTheCartWithÜrünSepetinizdeMessage(String expectedMessage) {
+        if (!productDetailPage().hasOtherSellers()) return;
+        String actualResult = getElementText(productCartPage().getProductAddedToCartText());
+        Assert.assertEquals(expectedMessage, actualResult);
     }
 }

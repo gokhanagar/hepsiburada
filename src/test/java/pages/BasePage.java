@@ -6,6 +6,8 @@ public abstract class BasePage {
     private SearchResultsPage searchResultsPage;
     private ProductDetailPage productDetailPage;
     private ProductReviewsPage productReviewsPage;
+    private OtherSellersPage otherSellersPage;
+    private ProductCartPage productCartPage;
 
     public HomePage homePage() {
         if (homePage == null){
@@ -35,6 +37,18 @@ public abstract class BasePage {
         return productReviewsPage;
     }
 
+    public OtherSellersPage otherSellersPage(){
+        if( otherSellersPage == null){
+            otherSellersPage = new OtherSellersPage();
+        }
+        return otherSellersPage;
+    }
 
+    public ProductCartPage productCartPage(){
+        if(productCartPage == null){
+            productCartPage = new ProductCartPage();
+        }
+        return productCartPage;
+    }
 
 }

@@ -6,12 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Rectangle;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -81,13 +76,6 @@ public class BrowserUtils {
         }
     }
 
-    public static boolean isElementDisplayed(By locator) {
-        try {
-            return waitForVisibility(locator, 5).isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
-    }
 
     public static boolean isElementPresent(By locator) {
         try {
@@ -98,14 +86,6 @@ public class BrowserUtils {
         }
     }
 
-    public static void waitForElementToBeClickableAndClick(By locator) {
-        try {
-            WebElement element = waitForClickability(locator, 10);
-            element.click();
-        } catch (Exception e) {
-            throw new RuntimeException("Element not clickable: " + e.getMessage());
-        }
-    }
 
     public static String getElementText(By locator) {
         try {
@@ -115,89 +95,27 @@ public class BrowserUtils {
         }
     }
 
-    // Sayfa yüklenmesini bekleyen metodlar
-    public static void waitForPageToLoad(int timeout) {
-        try {
-            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
-            wait.until(webDriver -> ((JavascriptExecutor) webDriver)
-                    .executeScript("return document.readyState").equals("complete"));
-        } catch (Exception e) {
-            throw new RuntimeException("Page load timeout: " + e.getMessage());
-        }
-    }
-
-    // Yardımcı metodlar
-    public static void waitFor(int seconds) {
-        try {
-            Thread.sleep(seconds * 1000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-    }
-
     public static void verifyElementDisplayed(By locator) {
+        Assert.assertTrue( driver.findElement(locator).isDisplayed());
+    }
+    public static boolean isElementDisplayed(By locator) {
         try {
-            Assert.assertTrue("Element not visible: " + locator, 
-                    isElementDisplayed(locator));
-        } catch (Exception e) {
-            Assert.fail("Element not found: " + locator);
+            return driver.findElement(locator).isDisplayed();
+        } catch (NoSuchElementException | StaleElementReferenceException e) {
+            return false;
         }
     }
 
-    public static void verifyElementNotDisplayed(By locator) {
-        try {
-            Assert.assertFalse("Element should not be visible: " + locator, 
-                    isElementDisplayed(locator));
-        } catch (Exception e) {
-            // Element zaten görünmüyorsa başarılı
-        }
-    }
 
-    public static void switchWindowAndVerify(String expectedInURL, String expectedInTitle){
-
-
-        Set<String> allWindowHandles = Driver.getDriver().getWindowHandles();
-
-        for (String each : allWindowHandles) {
-
-            Driver.getDriver().switchTo().window(each);
-            System.out.println("Current URL: " + Driver.getDriver().getCurrentUrl());
-
-            if (Driver.getDriver().getCurrentUrl().contains(expectedInURL )){
-                break;
-            }
-        }
-
-
-        String actualTitle = Driver.getDriver().getTitle();
-        Assert.assertTrue(actualTitle.contains(expectedInTitle));
-    }
 
     public static void verifyTitle(String expectedTitle){
-        Assert.assertEquals(expectedTitle,Driver.getDriver().getTitle());
+        Assert.assertEquals(expectedTitle,driver.getTitle());
     }
 
     public static void verifyTitleContains( String expectedInTitle){
-        Assert.assertTrue(Driver.getDriver().getTitle().contains(expectedInTitle));
+        Assert.assertTrue(driver.getTitle().contains(expectedInTitle));
     }
 
-    public static void waitForTitleContains(String title){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.titleContains(title));
-    }
-
-    public static List<String> dropdownOptions_as_STRING(WebElement dropdownElement){
-
-        Select month = new Select(dropdownElement);
-        List<WebElement> actualMonth_as_WEBELEMENT = month.getOptions();
-
-        List<String> actualMonth_as_STRING = new ArrayList<>();
-
-        for (WebElement each : actualMonth_as_WEBELEMENT) {
-            actualMonth_as_STRING.add(each.getText());
-        }
-        return actualMonth_as_STRING;
-    }
 
     public static void clickRadioButton(List<WebElement> radioButtons, String attributeValue){
         for (WebElement each : radioButtons) {
@@ -248,93 +166,11 @@ public class BrowserUtils {
         return elemTexts;
     }
 
-    public static void scrollIntoView(WebElement element) {
-        ((JavascriptExecutor) driver).executeScript(
-            "arguments[0].scrollIntoView({behavior: 'instant', block: 'center'});", 
-            element
-        );
-        
-        wait.until(driver -> {
-            Rectangle rect = element.getRect();
-            return (Boolean) ((JavascriptExecutor) driver).executeScript(
-                "var rect = arguments[0];" +
-                "return (rect.top >= 0 && rect.left >= 0 && " +
-                "rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && " +
-                "rect.right <= (window.innerWidth || document.documentElement.clientWidth));",
-                rect
-            );
-        });
-    }
+
 
     public static void doubleClick(WebElement element) {
         new Actions(Driver.getDriver()).doubleClick(element).build().perform();
     }
-
-    public static void highlight(WebElement element) {
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
-        waitFor(1);
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].removeAttribute('style', 'background: yellow; border: 2px solid red;');", element);
-    }
-
-    public static void selectCheckBox(WebElement element, boolean check) {
-        if (check) {
-            if (!element.isSelected()) {
-                element.click();
-            }
-        } else {
-            if (element.isSelected()) {
-                element.click();
-            }
-        }
-    }
-
-
-    public static void executeJScommand(WebElement element, String command) {
-        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
-        jse.executeScript(command, element);
-
-    }
-
-       public static void executeJScommand(String command) {
-        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
-        jse.executeScript(command);
-
-    }
-
-
-    public static void waitForPresenceOfElement(By by, long time) {
-        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(time)).until(ExpectedConditions.presenceOfElementLocated(by));
-    }
-
-    public static void waitForURLContains(String expectedURL){
-
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.urlContains(expectedURL));
-
-    }
-
-    private static final Wait<WebDriver> fluentWait = new FluentWait<>(driver)
-            .withTimeout(Duration.ofSeconds(10))
-            .pollingEvery(Duration.ofMillis(500))
-            .ignoring(StaleElementReferenceException.class);
-
-    public static void waitForJQueryLoad() {
-        fluentWait.until(driver -> {
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            return (Boolean) js.executeScript("return jQuery.active == 0");
-        });
-    }
-
-    public static void waitForPageReadyState() {
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-            .until(driver -> ((JavascriptExecutor) driver)
-                .executeScript("return document.readyState").equals("complete"));
-    }
-
-    public static WebElement waitForElementToBeRefreshed(WebElement element, By locator) {
-        return fluentWait.until(driver -> driver.findElement(locator));
-    }
-
 
 
     public static void clickAndWaitForReload(By locator) {

@@ -2,8 +2,8 @@ package pages;
 
 import java.time.Duration;
 
+import enums.Links;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
@@ -16,42 +16,33 @@ public class HomePage {
     private final By searchBar = By.cssSelector("input[type='search']");
     private final By cookieButton = By.cssSelector("button[id='onetrust-accept-btn-handler']");
 
-    public HomePage assertHomePage() {
+    public By getSelectedPopularProductText() {
+        return selectedPopularProductText;
+    }
 
-            //driver.findElement(cookieButton).click();
-            System.out.println("Waiting for page to load...");
-            waitForPageToLoad(20);
-            
-            System.out.println("Checking for security page...");
+    public HomePage acceptCookie(){
+        try {
+            driver.findElement(cookieButton).click();
+            waitForDOMStability(10);
+        } catch (Exception e) {
+
+        }
+        return this;
+    }
+
+
+    public HomePage checkAndHandleSecurityRedirect() {
+
             if (driver.getCurrentUrl().contains("security")) {
-                System.out.println("Security page detected, retrying...");
-                driver.navigate().to("https://www.hepsiburada.com");
-                waitForPageToLoad(20);
+                driver.get(Links.BASEURL.getLink());
             }
-            
-            System.out.println("Waiting for DOM stability...");
-            waitForDOMStability(5);
-            
-            System.out.println("Checking for popular product text...");
-            if (!isElementPresent(selectedPopularProductText)) {
-                System.out.println("Popular product text not found, refreshing page...");
-                driver.navigate().refresh();
-                waitForPageToLoad(20);
-                waitForDOMStability(5);
-            }
-            
-            System.out.println("Verifying element display...");
-            verifyElementDisplayed(selectedPopularProductText);
-            
-            return this;
 
+            waitForDOMStability(20);
+            return this;
     }
 
 
     public HomePage searchForProduct(String keyword) {
-
-            waitForPageToLoad(10);
-            waitForDOMStability(10);
 
             verifyElementDisplayed(searchBar);
 
@@ -64,7 +55,7 @@ public class HomePage {
                     .sendKeys(Keys.ENTER)
                     .perform();
 
-            waitForDOMStability(2);
+            waitForDOMStability(20);
 
             return this;
 

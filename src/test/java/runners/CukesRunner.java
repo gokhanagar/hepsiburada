@@ -15,7 +15,7 @@ import io.cucumber.junit.CucumberOptions;
         },
         features = "src/test/resources/features",
         glue = "stepDefs",
-        tags = "@Positive"
+        tags = "@Positiv"
 )
 public class CukesRunner {
 }
