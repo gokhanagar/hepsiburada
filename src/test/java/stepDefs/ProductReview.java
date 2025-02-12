@@ -1,5 +1,7 @@
 package stepDefs;
 
+import org.junit.Assert;
+
 import enums.Links;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -7,9 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.junit.Assert;
 import pages.BasePage;
-
 import static stepDefs.Hooks.driver;
 import static utility.BrowserUtils.getElementText;
 import static utility.BrowserUtils.verifyElementDisplayed;
@@ -82,12 +82,11 @@ public class ProductReview extends BasePage {
 
     }
 
-    @Then("confirming that the product is in the cart with {string} message")
-    public void confirmingThatTheProductIsInTheCartWithÜrünSepetinizdeMessage(String expectedMessage) {
+    @Then("verify product is added to cart successfully")
+    public void verifyProductIsAddedToCartSuccessfully() {
         if (!productDetailPage().hasOtherSellers()) return;
-        String actualResult = getElementText(productCartPage().getProductAddedToCartText());
-        Assert.assertEquals(expectedMessage, actualResult);
+        Assert.assertTrue("Product should be added to cart",
+                productCartPage().verifyProductAddedToCart());
     }
-
 
 }
