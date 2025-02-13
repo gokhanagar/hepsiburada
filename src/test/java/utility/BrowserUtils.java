@@ -4,25 +4,29 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
-import org.junit.Assert;
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static stepDefs.Hooks.driver;
 
 public class BrowserUtils {
 
     private static final Logger logger = LogManager.getLogger(BrowserUtils.class);
-    private static final WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+    private static final WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     public static WebElement waitForVisibility(By locator, int timeout) {
         try {
             logger.debug("Waiting for visibility of element: {}", locator);
-            return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+            return new WebDriverWait(driver, Duration.ofSeconds(timeout))
+                    .until(ExpectedConditions.visibilityOfElementLocated(locator));
         } catch (Exception e) {
             logger.error("Element not visible: {} - {}", locator, e.getMessage());
             throw e;
@@ -32,7 +36,7 @@ public class BrowserUtils {
     public static WebElement waitForClickability(By locator, int timeout) {
         try {
             logger.debug("Waiting for element to be clickable: {}", locator);
-            return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout))
+            return new WebDriverWait(driver, Duration.ofSeconds(timeout))
                     .until(ExpectedConditions.elementToBeClickable(locator));
         } catch (Exception e) {
             logger.error("Element not clickable: {} - {}", locator, e.getMessage());
@@ -44,13 +48,13 @@ public class BrowserUtils {
         try {
             logger.debug("Attempting to click element with JavaScript: {}", locator);
             WebElement element = waitForVisibility(locator, 10);
-            JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+            JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollIntoView(true);", element);
             js.executeScript("arguments[0].click();", element);
             logger.debug("Successfully clicked element with JavaScript: {}", locator);
         } catch (Exception e) {
             logger.error("Failed to click element with JavaScript: {} - {}", locator, e.getMessage());
-            throw new RuntimeException("Failed to click element with JavaScript: " + e.getMessage());
+            throw e;
         }
     }
 
@@ -112,19 +116,43 @@ public class BrowserUtils {
     }
 
     public static void clickAndSwitchToNewTab(List<WebElement> elements, int nextNumber) {
-        String originalWindow = driver.getWindowHandle();
-        int originalWindowCount = driver.getWindowHandles().size();
-        elements.get(nextNumber).click();
+        try {
+            logger.debug("Attempting to click and switch to new tab. Element index: {}", nextNumber);
+            String originalWindow = driver.getWindowHandle();
+            int originalWindowCount = driver.getWindowHandles().size();
 
-        wait.until(ExpectedConditions.numberOfWindowsToBe(originalWindowCount + 1));
-
-        Set<String> allWindows = driver.getWindowHandles();
-
-        for (String window : allWindows) {
-            if (!originalWindow.contentEquals(window)) {
-                driver.switchTo().window(window);
-                break;
+            WebElement element = elements.get(nextNumber);
+            
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+            waitForDOMStability(2);
+            
+            try {
+                element.click();
+            } catch (Exception e) {
+                logger.warn("Normal click failed, trying JavaScript click");
+                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
             }
+
+            try {
+                new WebDriverWait(driver, Duration.ofSeconds(10))
+                    .until(ExpectedConditions.numberOfWindowsToBe(originalWindowCount + 1));
+                
+                Set<String> allWindows = driver.getWindowHandles();
+                for (String window : allWindows) {
+                    if (!originalWindow.contentEquals(window)) {
+                        driver.switchTo().window(window);
+                        logger.debug("Successfully switched to new window");
+                        return;
+                    }
+                }
+            } catch (Exception e) {
+                logger.error("Failed to switch window: {}", e.getMessage());
+                throw e;
+            }
+
+        } catch (Exception e) {
+            logger.error("Failed to click and switch to new tab: {}", e.getMessage());
+            throw e;
         }
     }
 

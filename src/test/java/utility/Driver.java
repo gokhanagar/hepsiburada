@@ -4,6 +4,8 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -13,27 +15,33 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
-    private Driver() {
-        // Singleton pattern
-    }
+    private Driver() {}
 
     private static final ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
     
-    public static WebDriver getDriver() {
+    private static final Logger logger = LogManager.getLogger(Driver.class);
+    
+    public static synchronized WebDriver getDriver() {
         if (driverPool.get() == null) {
-            synchronized (Driver.class) {
+            try {
                 String browser = System.getProperty("browser", "chrome");
                 boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
                 
+                WebDriver driver;
                 switch (browser.toLowerCase()) {
-                    case "chrome" -> driverPool.set(createChromeDriver(isHeadless));
-                    case "firefox" -> driverPool.set(createFirefoxDriver(isHeadless));
-                    case "edge" -> driverPool.set(createEdgeDriver());
-                    case "safari" -> driverPool.set(createSafariDriver());
+                    case "chrome" -> driver = createChromeDriver(isHeadless);
+                    case "firefox" -> driver = createFirefoxDriver(isHeadless);
+                    case "edge" -> driver = createEdgeDriver();
+                    case "safari" -> driver = createSafariDriver();
                     default -> throw new IllegalArgumentException("Unsupported browser: " + browser);
                 }
                 
-                setupDriver(driverPool.get());
+                setupDriver(driver);
+                driverPool.set(driver);
+                
+            } catch (Exception e) {
+                logger.error("Failed to create WebDriver: {}", e.getMessage());
+                throw new RuntimeException("Failed to create WebDriver", e);
             }
         }
         return driverPool.get();
@@ -41,8 +49,7 @@ public class Driver {
 
     private static ChromeDriver createChromeDriver(boolean isHeadless) {
         ChromeOptions options = new ChromeOptions();
-        
-        // Temel ayarlar
+
         options.addArguments(
             "--remote-allow-origins=*",
             "--disable-notifications",
@@ -53,19 +60,17 @@ public class Driver {
             "--disable-extensions"
         );
         
-        // Bot tespitini engelleme
         options.addArguments("--disable-blink-features=AutomationControlled");
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("credentials_enable_service", false);
         prefs.put("profile.password_manager_enabled", false);
         options.setExperimentalOption("prefs", prefs);
-        
-        // Automation flags'i gizle
+
         options.setExperimentalOption("excludeSwitches", 
             new String[]{"enable-automation", "enable-logging"});
         options.setExperimentalOption("useAutomationExtension", false);
         
-        // User agent değiştir
+
         options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
             "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36");
 
@@ -118,10 +123,14 @@ public class Driver {
         }
     }
 
-    public static void closeDriver() {
-        if (driverPool.get() != null) {
-            driverPool.get().quit();
-            driverPool.remove();
+    public static synchronized void closeDriver() {
+        try {
+            if (driverPool.get() != null) {
+                driverPool.get().quit();
+                driverPool.remove();
+            }
+        } catch (Exception e) {
+            logger.error("Error closing driver: {}", e.getMessage());
         }
     }
 }

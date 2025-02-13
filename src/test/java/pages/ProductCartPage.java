@@ -11,7 +11,6 @@ import static utility.BrowserUtils.getElementText;
 
 public class ProductCartPage extends BasePage{
     private static final Logger logger = LogManager.getLogger(ProductCartPage.class);
-
     private final By myCart = By.xpath("//div[@class='basket_headerTop_F06D4']");
     private final By productPriceOnTheCart = By.xpath("//div[@class='product_price_container_2zE3C']");
 

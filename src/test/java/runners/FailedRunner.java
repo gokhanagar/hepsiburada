@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         plugin = {
             "pretty",
-            "io.qameta.allure.cucumber7.AllureCucumber7Jvm",
+            "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
             "rerun:target/rerun.txt"
         },
         features = "@target/rerun.txt",

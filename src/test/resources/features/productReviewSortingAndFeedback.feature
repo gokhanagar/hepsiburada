@@ -1,5 +1,5 @@
-@Positive
-Feature: Product Review Sorting and Feedback
+@All
+Feature: US1 - Product Review Sorting and Feedback
 
   Background:
     Given user navigate to hepsiburada.com

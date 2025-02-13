@@ -1,72 +1,41 @@
 package stepDefs;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
-import org.openqa.selenium.Cookie;
-import pages.BasePage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import utility.BrowserUtils;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import utility.Driver;
 
-
 public class Hooks {
+    private static final Logger logger = LogManager.getLogger(Hooks.class);
     public static WebDriver driver;
-    public static boolean isFullScreen = true;
-    public static int width;
-    public static int height;
-    public static boolean isHeadless = false;
-    public static String browserType = "chrome";
-
-    @Before(value = "@headless", order = 0)
-    public void setIsHeadless() {
-        isHeadless = true;
-    }
-
-    @Before(value = "@firefox", order = 0)
-    public void setIsFirefox() {
-        browserType = "firefox";
-    }
-
-
-    @Before(value = "@iPhone12", order = 0)
-    public void setiPhone12() {
-        isFullScreen = false;
-        width = 390;
-        height = 844;
-    }
-
-
-    @Before(order = 1)
-    public void setup() {
-
+    
+    @Before
+    public void setUp() {
+        logger.info("Starting new test scenario");
         driver = Driver.getDriver();
-        driver.manage().deleteAllCookies();
-
     }
 
-    /*
     @After
-    public void tearDownMethod(Scenario scenario){
-
-        if (scenario.isFailed()) {
-
-            byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "image/png", scenario.getName());
-
+    public void tearDown(Scenario scenario) {
+        try {
+            if (scenario.isFailed()) {
+                logger.warn("Scenario failed, taking screenshot");
+                final byte[] screenshot = ((TakesScreenshot) driver)
+                    .getScreenshotAs(OutputType.BYTES);
+                scenario.attach(screenshot, "image/png", scenario.getName());
+            }
+        } catch (Exception e) {
+            logger.error("Error in teardown: {}", e.getMessage());
+        } finally {
+            logger.info("Closing driver");
+            Driver.closeDriver();
+            driver = null;
         }
-
-        Driver.closeDriver();
-
     }
-
-     */
-
-
-
-
-
-
 }

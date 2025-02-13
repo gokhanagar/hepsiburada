@@ -9,12 +9,13 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         plugin = {
                 "pretty",
-                "io.qameta.allure.cucumber7.AllureCucumber7Jvm",
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
                 "rerun:target/rerun.txt"
         },
         features = "src/test/resources/features",
         glue = "stepDefs",
-        tags = "@Positiv"
+        tags = "@All"
+
 )
 public class CukesRunner {
 }
