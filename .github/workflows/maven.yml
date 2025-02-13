@@ -42,13 +42,13 @@ jobs:
       if: always()
       run: |
         mvn allure:report
-        mkdir -p allure-report
-        cp -r target/allure-results/* allure-report/
+        mkdir -p allure-results
+        cp -r target/allure-results/* allure-results/
     
     - name: Store Allure Results
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: allure-report
-        path: allure-report
+        name: allure-results
+        path: allure-results
         retention-days: 30

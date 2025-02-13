@@ -33,17 +33,6 @@ public class BrowserUtils {
         }
     }
 
-    public static WebElement waitForClickability(By locator, int timeout) {
-        try {
-            logger.debug("Waiting for element to be clickable: {}", locator);
-            return new WebDriverWait(driver, Duration.ofSeconds(timeout))
-                    .until(ExpectedConditions.elementToBeClickable(locator));
-        } catch (Exception e) {
-            logger.error("Element not clickable: {} - {}", locator, e.getMessage());
-            throw e;
-        }
-    }
-
     public static void clickWithJS(By locator) {
         try {
             logger.debug("Attempting to click element with JavaScript: {}", locator);
@@ -69,18 +58,6 @@ public class BrowserUtils {
         }
     }
 
-    public static void sendKeysToElement(By locator, String text) {
-        try {
-            logger.debug("Sending keys to element: {} - Text: {}", locator, text);
-            WebElement element = waitForVisibility(locator, 10);
-            element.clear();
-            element.sendKeys(text);
-            logger.debug("Successfully sent keys to element: {}", locator);
-        } catch (Exception e) {
-            logger.error("Failed to send keys to element: {} - {}", locator, e.getMessage());
-            throw new RuntimeException("Failed to send keys to element: " + e.getMessage());
-        }
-    }
 
     public static String getElementText(By locator) {
         try {
@@ -187,4 +164,31 @@ public class BrowserUtils {
             logger.error("Failed waiting for DOM stability: {}", e.getMessage());
         }
     }
+
+
+    public static void sendKeysToElement(By locator, String text) {
+        try {
+            logger.debug("Sending keys to element: {} - Text: {}", locator, text);
+            WebElement element = waitForVisibility(locator, 10);
+            element.clear();
+            element.sendKeys(text);
+            logger.debug("Successfully sent keys to element: {}", locator);
+        } catch (Exception e) {
+            logger.error("Failed to send keys to element: {} - {}", locator, e.getMessage());
+            throw new RuntimeException("Failed to send keys to element: " + e.getMessage());
+        }
+    }
+
+
+    public static WebElement waitForClickability(By locator, int timeout) {
+        try {
+            logger.debug("Waiting for element to be clickable: {}", locator);
+            return new WebDriverWait(driver, Duration.ofSeconds(timeout))
+                    .until(ExpectedConditions.elementToBeClickable(locator));
+        } catch (Exception e) {
+            logger.error("Element not clickable: {} - {}", locator, e.getMessage());
+            throw e;
+        }
+    }
+
 }
