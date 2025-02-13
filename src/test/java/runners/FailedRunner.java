@@ -1,16 +1,19 @@
 package runners;
 
+import org.junit.runner.RunWith;
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+        plugin = {
+            "pretty",
+            "io.qameta.allure.cucumber7.AllureCucumber7Jvm",
+            "rerun:target/rerun.txt"
         },
-        features = "@target/reports/rerun.txt",
-        glue = ""
+        features = "@target/rerun.txt",
+        glue = "stepDefs"
 )
 
 public class FailedRunner {

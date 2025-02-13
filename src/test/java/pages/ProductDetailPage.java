@@ -2,6 +2,8 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import static utility.BrowserUtils.clickWithJS;
 import static utility.BrowserUtils.getElementText;
@@ -9,6 +11,7 @@ import static utility.BrowserUtils.isElementDisplayed;
 import static utility.BrowserUtils.waitForDOMStability;
 
 public class ProductDetailPage extends BasePage{
+    private static final Logger logger = LogManager.getLogger(ProductDetailPage.class);
     private static boolean hasReview = false;
     private static boolean hasOtherSellers = false;
     private static String mainProductPrice;
@@ -24,34 +27,32 @@ public class ProductDetailPage extends BasePage{
     public By productAddToCartButton() {return productAddToCartButton;}
     private void checkAndClickIfReviewExists() {
         try {
-            System.out.println("Checking for reviews...");
+            logger.info("Checking for reviews");
             
             if (isElementDisplayed(noReviewText)) {
                 String actualText = getElementText(noReviewText);
-                System.out.println(actualText);
-
+                logger.info("Found no review text: {}", actualText);
                 Assert.assertTrue(isElementDisplayed(noReviewText));
-                System.out.println("Found no review text: " + actualText);
                 return;
             }
 
             if (isElementDisplayed(reviewButton)) {
-                System.out.println("Found review button, clicking...");
+                logger.info("Found review button, clicking");
                 clickWithJS(reviewButton);
                 hasReview = true;
             }
             
         } catch (Exception e) {
-            System.out.println("Error in checkAndClickIfReviewExists: " + e.getMessage());
+            logger.error("Error in checkAndClickIfReviewExists: {}", e.getMessage());
         }
     }
 
     public ProductDetailPage switchToDegerlendirmelerTab() {
         checkAndClickIfReviewExists();
-        System.out.println("Has review result: " + hasReview);
+        logger.info("Has review result: {}", hasReview);
 
         if (!hasReview) {
-            System.out.println("No reviews found. Skipping remaining steps.");
+            logger.warn("No reviews found. Skipping remaining steps.");
         }
         return this;
     }
@@ -62,43 +63,39 @@ public class ProductDetailPage extends BasePage{
 
     private void checkAndClickIfOtherSellersExists() {
         try {
-            System.out.println("Checking for other sellers...");
-
+            logger.info("Checking for other sellers...");
 
             if (isElementDisplayed(otherSellersText)) {
-                System.out.println("Found other sellers button, clicking...");
-
+                logger.info("Found other sellers button, clicking...");
                 clickWithJS(otherSellersSeeAllButton);
                 waitForDOMStability(20);
                 hasOtherSellers = true;
             }
         } catch (Exception e) {
-            System.out.println("Error in checkAndClickIfOtherSellersExists: " + e.getMessage());
+            logger.error("Error in checkAndClickIfOtherSellersExists: {}", e.getMessage());
         }
     }
 
     public ProductDetailPage switchToOtherSellersTab() {
         checkAndClickIfOtherSellersExists();
-        System.out.println("Has other sellers result: " + hasOtherSellers);
+        logger.info("Has other sellers result: {}", hasOtherSellers);
         return this;
     }
 
     public String getpriceText() {
         try {
-            // Önce özel fiyatı kontrol et
             if (isElementDisplayed(specialPriceText)) {
                 mainProductPrice = getElementText(specialPriceText);
-                System.out.println("Found special price: " + mainProductPrice);
+                logger.info("Found special price: {}", mainProductPrice);
                 return mainProductPrice;
             }
             
-            // Özel fiyat yoksa normal fiyatı al
             mainProductPrice = getElementText(defaultPriceText);
-            System.out.println("Found default price: " + mainProductPrice);
+            logger.info("Found default price: {}", mainProductPrice);
             return mainProductPrice;
             
         } catch (Exception e) {
-            System.out.println("Error getting price: " + e.getMessage());
+            logger.error("Error getting price: {}", e.getMessage());
             throw e;
         }
     }
@@ -107,7 +104,7 @@ public class ProductDetailPage extends BasePage{
         if (mainProductPrice == null || mainProductPrice.isEmpty()) {
             mainProductPrice = getpriceText();
         }
-        System.out.println("Getting main product price: " + mainProductPrice);
+        logger.info("Getting main product price: {}", mainProductPrice);
         return mainProductPrice;
     }
 
@@ -115,13 +112,17 @@ public class ProductDetailPage extends BasePage{
         return otherSellersPage().convertPriceToInteger(mainProductPrice);
     }
 
-    public void addProductToCart(){
-        clickWithJS(productAddToCartButton);
-        waitForDOMStability(5);
-        clickWithJS(shoppingCartButton);
-        waitForDOMStability(5);
+    public void addProductToCart() {
+        try {
+            clickWithJS(productAddToCartButton);
+            waitForDOMStability(5);
+            
+            clickWithJS(shoppingCartButton);
+            waitForDOMStability(5);
+        } catch (Exception e) {
+            logger.error("Error adding product to cart: {}", e.getMessage());
+            throw e;
+        }
     }
-
-
 
 }

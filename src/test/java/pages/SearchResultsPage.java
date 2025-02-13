@@ -22,7 +22,7 @@ public class SearchResultsPage {
         Random random = new Random();
 
         int nextNumber = random.nextInt(products.size());
-        System.out.println("rastgele numara " + nextNumber);
         clickAndSwitchToNewTab(products, nextNumber);
     }
+
 }

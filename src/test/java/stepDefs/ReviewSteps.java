@@ -18,9 +18,7 @@ import static utility.BrowserUtils.verifyElementDisplayed;
 public class ReviewSteps extends BasePage {
 
     @Given("user navigate to hepsiburada.com")
-    public void userNavigateToHepsiburadaCom() {
-        driver.get(Links.BASEURL.getLink());
-    }
+    public void userNavigateToHepsiburadaCom() {driver.get(Links.BASEURL.getLink());}
 
 
     @When("user search for {string} which is popular and has comments")
@@ -64,8 +62,6 @@ public class ReviewSteps extends BasePage {
         String actualResult = getElementText(productReviewsPage().getThankYouText());
         Assert.assertEquals(expectedMessage, actualResult);
     }
-
-
 
 
 

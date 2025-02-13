@@ -1,103 +1,114 @@
 package utility;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import static stepDefs.Hooks.driver;
 
 public class BrowserUtils {
 
-    // Temel wait mekanizması
+    private static final Logger logger = LogManager.getLogger(BrowserUtils.class);
     private static final WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
     public static WebElement waitForVisibility(By locator, int timeout) {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        try {
+            logger.debug("Waiting for visibility of element: {}", locator);
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        } catch (Exception e) {
+            logger.error("Element not visible: {} - {}", locator, e.getMessage());
+            throw e;
+        }
     }
 
     public static WebElement waitForClickability(By locator, int timeout) {
-        return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout))
-                .until(ExpectedConditions.elementToBeClickable(locator));
+        try {
+            logger.debug("Waiting for element to be clickable: {}", locator);
+            return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout))
+                    .until(ExpectedConditions.elementToBeClickable(locator));
+        } catch (Exception e) {
+            logger.error("Element not clickable: {} - {}", locator, e.getMessage());
+            throw e;
+        }
     }
 
     public static void clickWithJS(By locator) {
         try {
+            logger.debug("Attempting to click element with JavaScript: {}", locator);
             WebElement element = waitForVisibility(locator, 10);
             JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
             js.executeScript("arguments[0].scrollIntoView(true);", element);
             js.executeScript("arguments[0].click();", element);
+            logger.debug("Successfully clicked element with JavaScript: {}", locator);
         } catch (Exception e) {
+            logger.error("Failed to click element with JavaScript: {} - {}", locator, e.getMessage());
             throw new RuntimeException("Failed to click element with JavaScript: " + e.getMessage());
         }
     }
 
-    public static void click(By locator){
-        WebElement element = waitForVisibility(locator, 10);
-        element.click();
+    public static void click(By locator) {
+        try {
+            WebElement element = waitForVisibility(locator, 10);
+            element.click();
+            logger.debug("Successfully clicked element: {}", locator);
+        } catch (Exception e) {
+            logger.error("Failed to click element: {} - {}", locator, e.getMessage());
+            throw e;
+        }
     }
 
     public static void sendKeysToElement(By locator, String text) {
         try {
+            logger.debug("Sending keys to element: {} - Text: {}", locator, text);
             WebElement element = waitForVisibility(locator, 10);
             element.clear();
             element.sendKeys(text);
+            logger.debug("Successfully sent keys to element: {}", locator);
         } catch (Exception e) {
+            logger.error("Failed to send keys to element: {} - {}", locator, e.getMessage());
             throw new RuntimeException("Failed to send keys to element: " + e.getMessage());
         }
     }
 
-
     public static String getElementText(By locator) {
         try {
-            return waitForVisibility(locator, 10).getText();
+            String text = waitForVisibility(locator, 10).getText();
+            logger.debug("Got text from element: {} - Text: {}", locator, text);
+            return text;
         } catch (Exception e) {
+            logger.error("Failed to get element text: {} - {}", locator, e.getMessage());
             throw new RuntimeException("Failed to get element text: " + e.getMessage());
         }
     }
 
     public static void verifyElementDisplayed(By locator) {
-        Assert.assertTrue( driver.findElement(locator).isDisplayed());
+        try {
+            logger.debug("Verifying element is displayed: {}", locator);
+            Assert.assertTrue(driver.findElement(locator).isDisplayed());
+            logger.debug("Element is displayed: {}", locator);
+        } catch (Exception e) {
+            logger.error("Element not displayed: {} - {}", locator, e.getMessage());
+            throw e;
+        }
     }
+
     public static boolean isElementDisplayed(By locator) {
         try {
-            return driver.findElement(locator).isDisplayed();
+            boolean isDisplayed = driver.findElement(locator).isDisplayed();
+            logger.debug("Element display status: {} - {}", locator, isDisplayed);
+            return isDisplayed;
         } catch (NoSuchElementException | StaleElementReferenceException e) {
+            logger.debug("Element not found or stale: {}", locator);
             return false;
         }
-    }
-
-
-
-    public static void verifyTitle(String expectedTitle){
-        Assert.assertEquals(expectedTitle,driver.getTitle());
-    }
-
-    public static void verifyTitleContains( String expectedInTitle){
-        Assert.assertTrue(driver.getTitle().contains(expectedInTitle));
-    }
-
-
-    public static void clickRadioButton(List<WebElement> radioButtons, String attributeValue){
-        for (WebElement each : radioButtons) {
-            if(each.getAttribute("value").equalsIgnoreCase(attributeValue)){
-                each.click();
-            }
-        }
-    }
-
-
-    public static void verifyURLContains(String expectedInURL){
-        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInURL));
     }
 
     public static void clickAndSwitchToNewTab(List<WebElement> elements, int nextNumber) {
@@ -117,80 +128,9 @@ public class BrowserUtils {
         }
     }
 
-    public static List<String> getElementsText(List<WebElement> list) {
-        List<String> elemTexts = new ArrayList<>();
-        for (WebElement el : list) {
-            elemTexts.add(el.getText());
-        }
-        return elemTexts;
-    }
-
-    public static List<String> getElementsText(By locator) {
-
-        List<WebElement> elems = Driver.getDriver().findElements(locator);
-        List<String> elemTexts = new ArrayList<>();
-
-        for (WebElement el : elems) {
-            elemTexts.add(el.getText());
-        }
-        return elemTexts;
-    }
-
-
-
-    public static void doubleClick(WebElement element) {
-        new Actions(Driver.getDriver()).doubleClick(element).build().perform();
-    }
-
-
-    public static void clickAndWaitForReload(By locator) {
-        try {
-            WebElement element = waitForVisibility(locator, 10);
-            
-            // Tıklama işlemi
-            element.click();
-            
-            // Sayfanın yüklenmesini bekle
-            new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(webDriver -> ((JavascriptExecutor) webDriver)
-                    .executeScript("return document.readyState").equals("complete"));
-            
-        } catch (Exception e) {
-            // JavaScript ile tıklamayı dene
-            try {
-                WebElement element = driver.findElement(locator);
-                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
-                
-                // Sayfanın yüklenmesini bekle
-                new WebDriverWait(driver, Duration.ofSeconds(10))
-                    .until(webDriver -> ((JavascriptExecutor) webDriver)
-                        .executeScript("return document.readyState").equals("complete"));
-                        
-            } catch (Exception ex) {
-                throw new RuntimeException("Failed to click and wait for reload: " + ex.getMessage());
-            }
-        }
-    }
-
-    public static void waitForElementInteractable(By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        
-        // Element görünür ve tıklanabilir olana kadar bekle
-        wait.until(ExpectedConditions.and(
-            ExpectedConditions.visibilityOfElementLocated(locator),
-            ExpectedConditions.elementToBeClickable(locator)
-        ));
-        
-        // Element viewport içinde mi kontrol et
-        wait.until(driver -> (Boolean) ((JavascriptExecutor) driver)
-                .executeScript("var rect = arguments[0].getBoundingClientRect(); " +
-                        "return (rect.top >= 0 && rect.left >= 0 && " +
-                        "rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && " +
-                        "rect.right <= (window.innerWidth || document.documentElement.clientWidth));", driver.findElement(locator)));
-    }
-
     public static void waitForDOMStability(int timeoutSeconds) {
         try {
+            logger.debug("Waiting for DOM stability for {} seconds", timeoutSeconds);
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
             wait.until(driver -> {
                 try {
@@ -211,12 +151,12 @@ public class BrowserUtils {
                         "});"
                     );
                 } catch (Exception e) {
+                    logger.error("Error in DOM stability check: {}", e.getMessage());
                     return false;
                 }
             });
         } catch (Exception e) {
-
+            logger.error("Failed waiting for DOM stability: {}", e.getMessage());
         }
     }
-
 }
