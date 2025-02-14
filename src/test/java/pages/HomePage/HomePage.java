@@ -3,7 +3,6 @@ package pages.HomePage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 
 import pages.BasePage;
 import static stepDefs.Hooks.driver;
@@ -21,22 +20,10 @@ public class HomePage extends BasePage {
 
     public HomePage acceptCookie() {
         try {
-            // Önce JavaScript ile cookie'leri kabul et
-            ((JavascriptExecutor) driver).executeScript(
-                "document.cookie = 'OptanonAlertBoxClosed=' + new Date().toISOString();" +
-                "document.cookie = 'OptanonConsent=isGpcEnabled=0&datestamp=' + new Date().toISOString();"
-            );
-            
-            // Sonra butona tıklamayı dene
-            try {
-                click(cookieButton);
-            } catch (Exception e) {
-                logger.warn("Cookie button not found after JS execution, continuing...");
-            }
-            
-            waitForDOMStability(20);
+            click(cookieButton);
+            waitForDOMStability(10);
         } catch (Exception e) {
-            logger.error("Failed to handle cookies: {}", e.getMessage());
+            logger.error("Error in cookie handling: {}", e.getMessage());
         }
         return this;
     }
