@@ -1589,3 +1589,55 @@ Command: [aa0d90b37b44eebae56ef1cee90cff72, screenshot []]
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56357}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56357/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: aa0d90b37b44eebae56ef1cee90cff72
 08:16:18.060 [main] INFO  stepDefs.Hooks - Closing driver
+08:23:29.820 [main] INFO  stepDefs.Hooks - Starting new test scenario
+08:23:44.134 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
+08:23:45.540 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found no review text: Henüz değerlendirilmemiş
+08:23:45.562 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: false
+08:23:45.562 [main] WARN  pages.ProductDetailPage.ProductDetailPage - No reviews found. Skipping remaining steps.
+08:23:45.565 [main] INFO  stepDefs.Hooks - Closing driver
+08:23:52.107 [main] INFO  stepDefs.Hooks - Starting new test scenario
+08:24:04.963 [main] ERROR utility.BrowserUtils - Error in DOM stability check: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.98)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e9a5fa314efc7bfd16c17a741d126cc3, executeScript {script=return new Promise(resolve => {  let mutations = 0;  const observer = new MutationObserver(() => mutations++);  observer.observe(document, {     childList: true,    subtree: true,    attributes: true  });  setTimeout(() => {    observer.disconnect();    resolve(mutations < 5);  }, 500);});, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57732}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57732/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e9a5fa314efc7bfd16c17a741d126cc3
+08:24:05.470 [main] ERROR utility.BrowserUtils - Error in DOM stability check: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.98)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e9a5fa314efc7bfd16c17a741d126cc3, executeScript {script=return new Promise(resolve => {  let mutations = 0;  const observer = new MutationObserver(() => mutations++);  observer.observe(document, {     childList: true,    subtree: true,    attributes: true  });  setTimeout(() => {    observer.disconnect();    resolve(mutations < 5);  }, 500);});, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57732}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57732/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e9a5fa314efc7bfd16c17a741d126cc3
+08:24:05.471 [main] ERROR utility.BrowserUtils - Failed waiting for DOM stability: Expected condition failed: waiting for utility.BrowserUtils$$Lambda$786/0x00000210842ede08@2a1debfa (tried for 2 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57732}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57732/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e9a5fa314efc7bfd16c17a741d126cc3
+08:24:05.475 [main] WARN  utility.BrowserUtils - Normal click failed, trying JavaScript click
+08:24:05.478 [main] ERROR utility.BrowserUtils - Failed to click and switch to new tab: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.98)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e9a5fa314efc7bfd16c17a741d126cc3, executeScript {script=arguments[0].click();, args=[{element-6066-11e4-a52e-4f735466cecf=f.8A53ACE6EDCD979C2750368052123A41.d.F1B4B2C96A3165D432B048BE7FE4CD87.e.762}]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57732}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57732/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e9a5fa314efc7bfd16c17a741d126cc3
+08:24:05.490 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+08:24:05.494 [main] ERROR stepDefs.Hooks - Error in teardown: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.98)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e9a5fa314efc7bfd16c17a741d126cc3, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57732}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57732/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e9a5fa314efc7bfd16c17a741d126cc3
+08:24:05.495 [main] INFO  stepDefs.Hooks - Closing driver

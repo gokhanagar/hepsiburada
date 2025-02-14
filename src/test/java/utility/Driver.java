@@ -78,10 +78,7 @@ public class Driver {
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("credentials_enable_service", false);
         prefs.put("profile.password_manager_enabled", false);
-        prefs.put("profile.default_content_settings.cookies", 1);
-        prefs.put("profile.cookie_controls_mode", 0);
-        prefs.put("profile.block_third_party_cookies", false);
-        prefs.put("profile.default_content_settings.popups", 0);
+
         options.setExperimentalOption("prefs", prefs);
 
         options.addArguments(

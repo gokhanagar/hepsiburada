@@ -16,7 +16,6 @@ public class HomePageSteps extends BasePage {
     @Then("user verify home page is displayed")
     public void userVerifyHomePageIsDisplayed() {
 
-
         verifyElementDisplayed(homePage().getSelectedPopularProductText());
     }
 

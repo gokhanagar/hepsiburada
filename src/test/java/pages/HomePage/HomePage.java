@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 
+import org.openqa.selenium.Cookie;
 import pages.BasePage;
 import static stepDefs.Hooks.driver;
 import static utility.BrowserUtils.click;
@@ -20,6 +21,7 @@ public class HomePage extends BasePage {
 
     public HomePage acceptCookie() {
         try {
+            driver.manage().addCookie(new Cookie("cookie_consent", "accepted"));
             click(cookieButton);
             waitForDOMStability(10);
         } catch (Exception e) {
