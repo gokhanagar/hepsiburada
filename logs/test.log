@@ -1641,3 +1641,10 @@ Command: [e9a5fa314efc7bfd16c17a741d126cc3, screenshot {}]
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57732}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57732/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: e9a5fa314efc7bfd16c17a741d126cc3
 08:24:05.495 [main] INFO  stepDefs.Hooks - Closing driver
+08:27:34.379 [main] INFO  stepDefs.Hooks - Starting new test scenario
+08:27:52.484 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
+08:27:55.057 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found no review text: Henüz değerlendirilmemiş
+08:27:55.094 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: false
+08:27:55.094 [main] WARN  pages.ProductDetailPage.ProductDetailPage - No reviews found. Skipping remaining steps.
+08:27:55.096 [main] INFO  stepDefs.Hooks - Closing driver
+08:29:20.303 [main] INFO  stepDefs.Hooks - Starting new test scenario
