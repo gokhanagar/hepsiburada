@@ -23,20 +23,33 @@ jobs:
         
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1
+      with:
+        chrome-version: stable
     
+    - name: Setup ChromeDriver
+      uses: nanasess/setup-chromedriver@v2
+      with:
+        chromedriver-version: latest
+        
     - name: Run Tests
       run: |
+        # Start Xvfb
         sudo apt-get install -y xvfb
         export DISPLAY=:99
         Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
         sleep 3
         
+        # Start ChromeDriver
+        chromedriver --version
+        chrome --version
+        
+        # Run tests
         mvn clean test \
           -Dbrowser=chrome \
           -Dheadless=true \
           -Dwebdriver.chrome.whitelistedIps="" \
           -Dselenium.window-size=1920,1080 \
-          -Dwebdriver.chrome.arguments="--no-sandbox,--disable-dev-shm-usage"
+          -Dwebdriver.chrome.args="--no-sandbox,--disable-dev-shm-usage,--remote-debugging-port=9222"
     
     - name: Generate Allure Report
       if: always()

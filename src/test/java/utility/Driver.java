@@ -55,9 +55,10 @@ public class Driver {
             "--disable-notifications",
             "--window-size=1920,1080",
             "--disable-popup-blocking",
-            "--disable-blink-features=AutomationControlled",  // Automation bayrağını gizle
+            "--disable-blink-features=AutomationControlled",
             "--disable-infobars",
-            "--disable-extensions"
+            "--disable-extensions",
+            "--remote-debugging-port=9222"
         );
         
         options.addArguments("--disable-blink-features=AutomationControlled");
@@ -80,6 +81,14 @@ public class Driver {
                 "--disable-gpu",
                 "--no-sandbox",
                 "--disable-dev-shm-usage"
+            );
+        }
+        
+        
+        if (System.getenv("CI") != null) {
+            options.addArguments(
+                "--disable-dev-shm-usage",
+                "--no-sandbox"
             );
         }
         

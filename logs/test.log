@@ -814,3 +814,12 @@ Session ID: 38e1eb3cded55c6fddc36991eaf5f437
 05:39:54.367 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: false
 05:39:54.368 [main] WARN  pages.ProductDetailPage.ProductDetailPage - No reviews found. Skipping remaining steps.
 05:39:54.371 [main] INFO  stepDefs.Hooks - Closing driver
+05:45:10.325 [main] INFO  stepDefs.Hooks - Starting new test scenario
+05:45:15.139 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+05:45:19.583 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+05:46:04.746 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 24.599,00 TL
+05:46:10.600 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 24.599,00 TL
+05:46:10.651 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 24.599,00 TL
+05:46:10.651 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 24.599,00 TL
+05:46:10.652 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 24599
+05:46:10.654 [main] INFO  stepDefs.Hooks - Closing driver
