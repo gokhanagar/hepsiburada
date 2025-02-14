@@ -1,14 +1,11 @@
 package stepDefs.HomePageSteps;
 
-import org.junit.Assert;
-
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.BasePage;
 import static stepDefs.Hooks.driver;
 import static utility.BrowserUtils.verifyElementDisplayed;
-
 import utility.ConfigReader;
 
 public class HomePageSteps extends BasePage {

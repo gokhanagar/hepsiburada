@@ -1,38 +1,42 @@
 package pages.HomePage;
 
-import java.time.Duration;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
 
 import pages.BasePage;
 import static stepDefs.Hooks.driver;
-import static utility.BrowserUtils.*;
-
+import static utility.BrowserUtils.click;
+import static utility.BrowserUtils.waitForDOMStability;
 import utility.ConfigReader;
 
 public class HomePage extends BasePage {
     private static final Logger logger = LogManager.getLogger(HomePage.class);
 
-    private final By selectedPopularProductText = By.xpath("(//div[@data-test-id='Recommendation']//h3[@data-test-id='Recommendation-title'])[1]");
+    private final By selectedPopularProductText = By.xpath("(//h3[@data-test-id='Recommendation-title'])[1]");
     private final By cookieButton = By.cssSelector("button[id='onetrust-accept-btn-handler']");
 
     public By getSelectedPopularProductText() {return selectedPopularProductText;}
 
-
-
-
     public HomePage acceptCookie() {
         try {
-
-            click(cookieButton);
+            // Önce JavaScript ile cookie'leri kabul et
+            ((JavascriptExecutor) driver).executeScript(
+                "document.cookie = 'OptanonAlertBoxClosed=' + new Date().toISOString();" +
+                "document.cookie = 'OptanonConsent=isGpcEnabled=0&datestamp=' + new Date().toISOString();"
+            );
+            
+            // Sonra butona tıklamayı dene
+            try {
+                click(cookieButton);
+            } catch (Exception e) {
+                logger.warn("Cookie button not found after JS execution, continuing...");
+            }
+            
             waitForDOMStability(20);
         } catch (Exception e) {
-            logger.error("Failed to accept cookies: {}", e.getMessage());
+            logger.error("Failed to handle cookies: {}", e.getMessage());
         }
         return this;
     }
@@ -50,8 +54,4 @@ public class HomePage extends BasePage {
             throw e;
         }
     }
-
-
-
-
 }

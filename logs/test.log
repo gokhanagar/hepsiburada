@@ -1208,3 +1208,36 @@ Session ID: b2516564d3b56659b3128ec5d514a137
 07:47:00.923 [main] INFO  stepDefs.Hooks - Closing driver
 07:47:01.101 [main] INFO  stepDefs.Hooks - Starting new test scenario
 07:47:03.802 [main] INFO  pages.HomePage.HomePage - Waiting for cookie button...
+07:51:52.981 [main] INFO  stepDefs.Hooks - Starting new test scenario
+07:52:42.338 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 2.499,00 TL
+07:52:47.672 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 2.499,00 TL
+07:52:47.716 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 2.499,00 TL
+07:52:47.716 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 2.499,00 TL
+07:52:47.717 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 2499
+07:52:47.719 [main] INFO  stepDefs.Hooks - Closing driver
+07:52:48.078 [main] INFO  stepDefs.Hooks - Starting new test scenario
+07:53:36.131 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 3.321,99 TL
+07:53:36.132 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+07:53:36.153 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+07:53:37.773 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: true
+07:53:37.774 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 3.321,99 TL
+07:53:37.774 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 3.321,99 TL
+07:53:38.819 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 6 price elements
+07:53:38.827 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 4.489,00 TL
+07:53:38.834 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 3.321,99 TL
+07:53:38.842 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 3.999,00 TL
+07:53:38.849 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 4.489,00 TL
+07:53:38.858 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 4.899,90 TL
+07:53:38.858 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): [4489, 3322, 3999, 4489, 4900]
+07:53:38.858 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: [4489, 3322, 3999, 4489, 4900]
+07:53:38.858 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Minimum other seller price: 3322
+07:53:38.858 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product price: 3322
+07:53:38.858 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product has the best price, adding to cart...
+07:53:38.876 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Closing other sellers view...
+07:53:39.425 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Adding main product to cart...
+07:53:41.043 [main] INFO  stepDefs.Hooks - Closing driver
+07:53:41.312 [main] INFO  stepDefs.Hooks - Starting new test scenario
+07:53:59.155 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
+07:54:29.602 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found review button, clicking
+07:54:30.703 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: true
+07:54:33.482 [main] INFO  stepDefs.Hooks - Closing driver
