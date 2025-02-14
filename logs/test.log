@@ -1241,3 +1241,69 @@ Session ID: b2516564d3b56659b3128ec5d514a137
 07:54:29.602 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found review button, clicking
 07:54:30.703 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: true
 07:54:33.482 [main] INFO  stepDefs.Hooks - Closing driver
+08:07:30.432 [main] INFO  stepDefs.Hooks - Starting new test scenario
+08:08:04.827 [main] ERROR utility.BrowserUtils - Element not clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55370}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55370/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 439b45df1dfa026d179bd2f37e7f8eab
+08:08:04.827 [main] ERROR utility.BrowserUtils - Failed to click element: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55370}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55370/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 439b45df1dfa026d179bd2f37e7f8eab
+08:08:04.827 [main] WARN  pages.HomePage.HomePage - Cookie button not found after JS execution, continuing...
+08:08:46.560 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 69.999,00 TL
+08:08:52.481 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 69.999,00 TL
+08:08:52.511 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 69.999,00 TL
+08:08:52.511 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 69.999,00 TL
+08:08:52.511 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 69999
+08:08:52.513 [main] INFO  stepDefs.Hooks - Closing driver
+08:08:52.927 [main] INFO  stepDefs.Hooks - Starting new test scenario
+08:09:10.881 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found special price: 10.050 TL
+08:09:10.882 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+08:09:10.905 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+08:09:12.512 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: true
+08:09:12.513 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 10.050 TL
+08:09:12.513 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 10.050 TL
+08:09:13.564 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 7 price elements
+08:09:13.571 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 12.300,00 TL
+08:09:13.580 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 10.100,00 TL
+08:09:13.588 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 11.600,00 TL
+08:09:13.596 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 12.300,00 TL
+08:09:13.604 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 13.491,00 TL
+08:09:13.613 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 13.681,58 TL
+08:09:13.613 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): [12300, 10100, 11600, 12300, 13491, 13682]
+08:09:13.613 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: [12300, 10100, 11600, 12300, 13491, 13682]
+08:09:13.613 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Minimum other seller price: 10100
+08:09:13.613 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product price: 10050
+08:09:13.613 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product has the best price, adding to cart...
+08:09:13.635 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Closing other sellers view...
+08:09:14.196 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Adding main product to cart...
+08:09:16.846 [main] ERROR utility.BrowserUtils - Failed waiting for DOM stability: Expected condition failed: waiting for utility.BrowserUtils$$Lambda$879/0x000002ba81415618@22854f2b (tried for 2 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55582}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55582/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b6906564d8b4508b612866ffcc0026ac
+08:09:16.847 [main] INFO  stepDefs.Hooks - Closing driver
+08:09:16.991 [main] INFO  stepDefs.Hooks - Starting new test scenario
+08:09:50.058 [main] ERROR utility.BrowserUtils - Element not clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55759}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55759/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c3322f59123231a33605b83c64b60c3a
+08:09:50.058 [main] ERROR utility.BrowserUtils - Failed to click element: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55759}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55759/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c3322f59123231a33605b83c64b60c3a
+08:09:50.058 [main] WARN  pages.HomePage.HomePage - Cookie button not found after JS execution, continuing...
+08:09:59.621 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
+08:10:30.192 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found review button, clicking
+08:10:31.983 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: true
+08:10:34.594 [main] INFO  stepDefs.Hooks - Closing driver
