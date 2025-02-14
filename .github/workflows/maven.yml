@@ -23,6 +23,8 @@ jobs:
         
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1
+      with:
+        chrome-version: "stable"  # Latest stable version
         
     - name: Run Tests
       run: |
@@ -33,7 +35,8 @@ jobs:
         
         mvn clean test \
           -Dbrowser=chrome \
-          -Dheadless=true
+          -Dheadless=true \
+          -Dwebdriver.chrome.whitelistedIps=""
     
     - name: Store Allure Results
       if: always()

@@ -25,7 +25,7 @@ public class Hooks {
     @After
     public void tearDown(Scenario scenario) {
         try {
-            if (scenario.isFailed()) {
+            if (scenario.isFailed() && driver != null) {
                 logger.warn("Scenario failed, taking screenshot");
                 final byte[] screenshot = ((TakesScreenshot) driver)
                     .getScreenshotAs(OutputType.BYTES);
