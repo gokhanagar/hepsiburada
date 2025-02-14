@@ -1,7 +1,7 @@
 package pages;
 
-import pages.ProductCartPage.ProductCartPage;
 import pages.HomePage.HomePage;
+import pages.ProductCartPage.ProductCartPage;
 import pages.OtherSellersPage.OtherSellersPage;
 import pages.ProductDetailPage.ProductDetailPage;
 import pages.ProductReviewsPage.ProductReviewsPage;

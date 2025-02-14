@@ -14,6 +14,7 @@ import utility.Driver;
 public class Hooks {
     private static final Logger logger = LogManager.getLogger(Hooks.class);
     public static WebDriver driver;
+
     
     @Before
     public void setUp() {

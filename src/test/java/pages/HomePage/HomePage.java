@@ -4,12 +4,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 
-
-import enums.Links;
 import pages.BasePage;
-
 import static stepDefs.Hooks.driver;
 import static utility.BrowserUtils.waitForDOMStability;
+import utility.ConfigReader;
 
 public class HomePage extends BasePage {
     private static final Logger logger = LogManager.getLogger(HomePage.class);
@@ -35,7 +33,8 @@ public class HomePage extends BasePage {
     public HomePage checkAndHandleSecurityRedirect() {
 
             if (driver.getCurrentUrl().contains("security")) {
-                driver.get(Links.BASEURL.getLink());}
+                String baseUrl = ConfigReader.get("base.url");
+                driver.get(baseUrl);;}
 
             waitForDOMStability(20);
             return this;

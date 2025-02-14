@@ -650,3 +650,167 @@ Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 1
 Session ID: a3acf891d2e217cb7e2dce98bb2c6816
 04:41:10.837 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
 04:41:11.095 [main] INFO  stepDefs.Hooks - Closing driver
+04:41:27.537 [main] INFO  stepDefs.Hooks - Starting new test scenario
+04:41:31.939 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+04:41:35.046 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+04:42:14.315 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 58.599,00 TL
+04:42:20.022 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 58.599,00 TL
+04:42:20.053 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 58.599,00 TL
+04:42:20.053 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 58.599,00 TL
+04:42:20.053 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 58599
+04:42:20.055 [main] INFO  stepDefs.Hooks - Closing driver
+05:01:22.641 [main] INFO  stepDefs.Hooks - Starting new test scenario
+05:01:27.382 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+05:01:32.059 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+05:01:36.750 [main] ERROR utility.BrowserUtils - Error in DOM stability check: Error communicating with the remote browser. It may have died.
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a322e443ea82a9cdcc7fb506205d8a6f, executeScript [script, args]]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56571}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56571/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a322e443ea82a9cdcc7fb506205d8a6f
+05:01:37.264 [main] ERROR utility.BrowserUtils - Error in DOM stability check: Error communicating with the remote browser. It may have died.
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a322e443ea82a9cdcc7fb506205d8a6f, executeScript [script, args]]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56571}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56571/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a322e443ea82a9cdcc7fb506205d8a6f
+05:01:37.779 [main] ERROR utility.BrowserUtils - Error in DOM stability check: Error communicating with the remote browser. It may have died.
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a322e443ea82a9cdcc7fb506205d8a6f, executeScript [script, args]]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56571}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56571/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a322e443ea82a9cdcc7fb506205d8a6f
+05:01:38.294 [main] ERROR utility.BrowserUtils - Error in DOM stability check: Error communicating with the remote browser. It may have died.
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a322e443ea82a9cdcc7fb506205d8a6f, executeScript [script, args]]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56571}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56571/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a322e443ea82a9cdcc7fb506205d8a6f
+05:01:38.808 [main] ERROR utility.BrowserUtils - Error in DOM stability check: Error communicating with the remote browser. It may have died.
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a322e443ea82a9cdcc7fb506205d8a6f, executeScript [script, args]]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56571}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56571/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a322e443ea82a9cdcc7fb506205d8a6f
+05:01:55.958 [main] INFO  stepDefs.Hooks - Starting new test scenario
+05:02:01.236 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+05:02:04.590 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+05:02:05.817 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+05:02:05.849 [main] ERROR stepDefs.Hooks - Error in teardown: invalid session id
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [30e058360c83c6e55783e9f9d9f74fcc, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57048}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57048/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 30e058360c83c6e55783e9f9d9f74fcc
+05:02:05.849 [main] INFO  stepDefs.Hooks - Closing driver
+05:33:07.511 [main] INFO  stepDefs.Hooks - Starting new test scenario
+05:33:15.065 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+05:33:20.936 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+05:34:04.819 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 41.099,00 TL
+05:34:10.937 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 41.099,00 TL
+05:34:11.013 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 41.099,00 TL
+05:34:11.014 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 41.099,00 TL
+05:34:11.014 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 41099
+05:34:11.020 [main] INFO  stepDefs.Hooks - Closing driver
+05:34:11.518 [main] INFO  stepDefs.Hooks - Starting new test scenario
+05:34:17.083 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+05:34:19.362 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+05:34:52.415 [main] ERROR utility.BrowserUtils - Element not visible: By.cssSelector: h1[data-test-id='header-h1'] - Expected condition failed: waiting for visibility of element located by By.cssSelector: h1[data-test-id='header-h1'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59057}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59057/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1c8c76eb6e0000934d28ffe88a7e640a
+05:34:52.416 [main] ERROR utility.BrowserUtils - Failed to get element text: By.cssSelector: h1[data-test-id='header-h1'] - Expected condition failed: waiting for visibility of element located by By.cssSelector: h1[data-test-id='header-h1'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59057}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59057/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1c8c76eb6e0000934d28ffe88a7e640a
+05:34:52.441 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+05:34:52.974 [main] INFO  stepDefs.Hooks - Closing driver
+05:34:53.270 [main] INFO  stepDefs.Hooks - Starting new test scenario
+05:34:57.859 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+05:35:02.885 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+05:35:15.131 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
+05:35:17.943 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found no review text: Henüz değerlendirilmemiş
+05:35:18.661 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: false
+05:35:18.661 [main] WARN  pages.ProductDetailPage.ProductDetailPage - No reviews found. Skipping remaining steps.
+05:35:18.664 [main] INFO  stepDefs.Hooks - Closing driver
+05:36:20.389 [main] INFO  stepDefs.Hooks - Starting new test scenario
+05:36:25.412 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+05:36:30.948 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+05:36:46.825 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found special price: 32.950 TL
+05:36:46.826 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+05:36:46.861 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+05:36:48.695 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: true
+05:36:48.697 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 32.950 TL
+05:36:48.697 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 32.950 TL
+05:36:49.850 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 5 price elements
+05:36:49.872 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 47.899,00 TL
+05:36:49.892 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 33.000,00 TL
+05:36:49.911 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 41.895,00 TL
+05:36:49.931 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 47.899,00 TL
+05:36:49.931 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): [47899, 33000, 41895, 47899]
+05:36:49.932 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: [47899, 33000, 41895, 47899]
+05:36:49.932 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Minimum other seller price: 33000
+05:36:49.932 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product price: 32950
+05:36:49.932 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product has the best price, adding to cart...
+05:36:49.981 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Closing other sellers view...
+05:36:50.624 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Adding main product to cart...
+05:36:52.458 [main] INFO  stepDefs.Hooks - Closing driver
+05:37:27.342 [main] INFO  stepDefs.Hooks - Starting new test scenario
+05:37:33.126 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+05:37:39.645 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+05:38:24.555 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 63.850,87 TL
+05:38:32.573 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 63.850,87 TL
+05:38:32.635 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 63.850,87 TL
+05:38:32.635 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 63.850,87 TL
+05:38:32.636 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 63851
+05:38:32.639 [main] INFO  stepDefs.Hooks - Closing driver
+05:38:33.142 [main] INFO  stepDefs.Hooks - Starting new test scenario
+05:38:37.730 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+05:38:42.450 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+05:38:57.554 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found special price: 7.982,41 TL
+05:38:57.556 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+05:38:57.591 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+05:39:27.623 [main] ERROR utility.BrowserUtils - Element not clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] - Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61198}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61198/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 38e1eb3cded55c6fddc36991eaf5f437
+05:39:27.624 [main] ERROR utility.BrowserUtils - Failed to click element with JavaScript: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] - Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61198}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61198/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 38e1eb3cded55c6fddc36991eaf5f437
+05:39:27.625 [main] ERROR pages.ProductDetailPage.ProductDetailPage - Error in checkAndClickIfOtherSellersExists: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61198}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61198/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 38e1eb3cded55c6fddc36991eaf5f437
+05:39:27.625 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: false
+05:39:27.628 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 7.982,41 TL
+05:39:27.628 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 7.982,41 TL
+05:39:28.756 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 1 price elements
+05:39:28.757 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): []
+05:39:28.757 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: []
+05:39:28.757 [main] INFO  pages.OtherSellersPage.OtherSellersPage - No other seller prices found, adding main product to cart
+05:39:28.985 [main] INFO  stepDefs.Hooks - Closing driver
+05:39:29.323 [main] INFO  stepDefs.Hooks - Starting new test scenario
+05:39:35.480 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+05:39:40.479 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+05:39:51.142 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
+05:39:54.317 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found no review text: Henüz değerlendirilmemiş
+05:39:54.367 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: false
+05:39:54.368 [main] WARN  pages.ProductDetailPage.ProductDetailPage - No reviews found. Skipping remaining steps.
+05:39:54.371 [main] INFO  stepDefs.Hooks - Closing driver

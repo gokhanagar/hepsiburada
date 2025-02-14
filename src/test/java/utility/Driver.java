@@ -24,8 +24,8 @@ public class Driver {
     public static synchronized WebDriver getDriver() {
         if (driverPool.get() == null) {
             try {
-                String browser = System.getProperty("browser", "chrome");
-                boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+                String browser = ConfigReader.get("browser");
+                boolean isHeadless = ConfigReader.getBoolean("headless");
                 
                 WebDriver driver;
                 switch (browser.toLowerCase()) {
@@ -107,13 +107,13 @@ public class Driver {
     }
 
     private static void setupDriver(WebDriver driver) {
-        boolean isFullScreen = Boolean.parseBoolean(System.getProperty("fullscreen", "true"));
+        boolean isFullScreen = ConfigReader.getBoolean("fullscreen");
         
         if (isFullScreen) {
             driver.manage().window().maximize();
         }
         
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ConfigReader.getInt("implicit.wait")));
     }
 
     private static void checkOS(String requiredOS, String browser) {
