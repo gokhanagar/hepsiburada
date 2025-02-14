@@ -19,9 +19,13 @@ import utility.ConfigReader;
 public class HomePage extends BasePage {
     private static final Logger logger = LogManager.getLogger(HomePage.class);
 
-    private final By mainHeader = By.cssSelector("div[data-test-id='main-header']");
-    private final By cookieButton = By.id("onetrust-accept-btn-handler");
-    private final By searchBox = By.cssSelector("input[type='text']");
+    private final By selectedPopularProductText = By.xpath("(//div[@data-test-id='Recommendation']//h3[@data-test-id='Recommendation-title'])[1]");
+    private final By cookieButton = By.cssSelector("button[id='onetrust-accept-btn-handler']");
+
+    public By getSelectedPopularProductText() {return selectedPopularProductText;}
+
+
+
 
     public HomePage acceptCookie() {
         try {
@@ -43,9 +47,8 @@ public class HomePage extends BasePage {
                 String baseUrl = ConfigReader.get("base.url");
                 driver.get(baseUrl);
             }
-            
-            waitForVisibility(mainHeader, 30);
-            
+
+            waitForDOMStability(20);
             return this;
         } catch (Exception e) {
             logger.error("Error handling security redirect: {}", e.getMessage());
@@ -53,15 +56,7 @@ public class HomePage extends BasePage {
         }
     }
 
-    public boolean isHomePageDisplayed() {
-        try {
 
-            return isElementDisplayed(mainHeader);
-        } catch (Exception e) {
-            logger.error("Error verifying home page: {}", e.getMessage());
-            return false;
-        }
-    }
 
 
 }
