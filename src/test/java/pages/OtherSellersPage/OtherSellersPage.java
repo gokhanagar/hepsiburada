@@ -66,7 +66,7 @@ public class OtherSellersPage extends BasePage {
         try {
             logger.info("Looking for button with price: {}", targetPrice);
             
-            waitForDOMStability(3);
+            waitForDOMStability(5);
             
             List<WebElement> currentButtons = driver.findElements(otherSellersProductAddToCartButton);
             logger.info("Total prices: {}", prices.size());

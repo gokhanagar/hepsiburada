@@ -100,13 +100,26 @@ public class BrowserUtils {
 
             WebElement element = elements.get(nextNumber);
 
+
+            String productName = "";
+            try {
+                productName = element.getText();
+                if (productName.isEmpty()) {
+                    productName = element.getAttribute("title");
+                }
+            } catch (Exception e) {
+                productName = "Unknown Product";
+                logger.warn("Could not get product name: {}", e.getMessage());
+            }
+
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
             waitForDOMStability(2);
 
             try {
                 element.click();
+                logger.info("Clicked on product: {}", productName);
             } catch (Exception e) {
-                logger.warn("Normal click failed, trying JavaScript click");
+                logger.warn("Normal click failed for product: {}, trying JavaScript click", productName);
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
             }
 
@@ -118,12 +131,12 @@ public class BrowserUtils {
                 for (String window : allWindows) {
                     if (!originalWindow.contentEquals(window)) {
                         driver.switchTo().window(window);
-                        logger.debug("Successfully switched to new window");
+                        logger.debug("Successfully switched to new window for product: {}", productName);
                         return;
                     }
                 }
             } catch (Exception e) {
-                logger.error("Failed to switch window: {}", e.getMessage());
+                logger.error("Failed to switch window for product: {}, Error: {}", productName, e.getMessage());
                 throw e;
             }
 

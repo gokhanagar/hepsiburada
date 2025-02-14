@@ -2672,3 +2672,276 @@ Session ID: 2f018adb4b5cd093d07cea52a6b1f68c
 13:20:32.181 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: false
 13:20:32.182 [main] WARN  pages.ProductDetailPage.ProductDetailPage - No reviews found. Skipping remaining steps.
 13:20:32.183 [main] INFO  stepDefs.Hooks - Closing driver
+14:14:02.652 [main] INFO  stepDefs.Hooks - Starting new test scenario
+14:14:38.129 [main] ERROR utility.BrowserUtils - Element not clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59756}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59756/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 15000, pageLoad: 45000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8cc7b6032db449be971056e08107f156
+14:14:38.129 [main] ERROR utility.BrowserUtils - Failed to click element: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59756}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59756/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 15000, pageLoad: 45000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8cc7b6032db449be971056e08107f156
+14:14:38.130 [main] ERROR pages.HomePage.HomePage - Error in cookie handling: Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59756}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59756/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 15000, pageLoad: 45000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8cc7b6032db449be971056e08107f156
+14:15:08.724 [main] ERROR utility.BrowserUtils - Element not displayed: By.xpath: (//h3[@data-test-id='Recommendation-title'])[1] - no such element: Unable to locate element: {"method":"xpath","selector":"(//h3[@data-test-id='Recommendation-title'])[1]"}
+  (Session info: chrome=133.0.6943.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8cc7b6032db449be971056e08107f156, findElement {using=xpath, value=(//h3[@data-test-id='Recommendation-title'])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59756}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59756/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 15000, pageLoad: 45000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8cc7b6032db449be971056e08107f156
+14:15:08.743 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+14:15:08.987 [main] INFO  stepDefs.Hooks - Closing driver
+14:15:47.412 [main] INFO  stepDefs.Hooks - Starting new test scenario
+14:16:16.015 [main] INFO  utility.BrowserUtils - Clicked on product: Kartsız 36 taksit
+Salcano Hector V Fren 24 Jant Dağ Bisikleti
+6
+8.500,00 TL
+Sepette 8.450,00 TL
+14:16:39.737 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found special price: 8.450 TL
+14:16:39.737 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+14:16:39.762 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+14:16:40.448 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: true
+14:16:40.450 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 8.450 TL
+14:16:40.450 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 8.450 TL
+14:16:41.503 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 5 price elements
+14:16:41.511 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 8.990,00 TL
+14:16:41.520 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 8.500,00 TL
+14:16:41.527 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 8.565,00 TL
+14:16:41.536 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 8.990,00 TL
+14:16:41.537 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): [8990, 8500, 8565, 8990]
+14:16:41.537 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: [8990, 8500, 8565, 8990]
+14:16:41.537 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Minimum other seller price: 8500
+14:16:41.537 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product price: 8450
+14:16:41.538 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product has the best price, adding to cart...
+14:16:41.559 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Closing other sellers view...
+14:16:42.135 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Adding main product to cart...
+14:16:44.843 [main] INFO  stepDefs.Hooks - Closing driver
+14:19:10.554 [main] INFO  stepDefs.Hooks - Starting new test scenario
+14:19:29.828 [main] INFO  utility.BrowserUtils - Clicked on product: Kartsız 36 taksit
+Salcano Hector 24 V - 24 Jant 21 Vites 14 Inç Dağ Bisikleti
+1
+8.498,00 TL
+Sepette 8.448,00 TL
+14:19:32.626 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found special price: 8.448 TL
+14:19:32.627 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+14:19:32.652 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+14:20:02.722 [main] ERROR utility.BrowserUtils - Element not clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] - Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60602}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60602/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 15000, pageLoad: 45000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c9a72af138ca71d68c3cf76d3d97c441
+14:20:02.722 [main] ERROR utility.BrowserUtils - Failed to click element with JavaScript: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] - Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60602}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60602/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 15000, pageLoad: 45000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c9a72af138ca71d68c3cf76d3d97c441
+14:20:02.723 [main] ERROR pages.ProductDetailPage.ProductDetailPage - Error in checkAndClickIfOtherSellersExists: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60602}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60602/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 15000, pageLoad: 45000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c9a72af138ca71d68c3cf76d3d97c441
+14:20:02.723 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: false
+14:20:02.724 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 8.448 TL
+14:20:02.724 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 8.448 TL
+14:20:03.779 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 1 price elements
+14:20:03.779 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): []
+14:20:03.780 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: []
+14:20:03.781 [main] INFO  pages.OtherSellersPage.OtherSellersPage - No other seller prices found, adding main product to cart
+14:20:03.889 [main] INFO  stepDefs.Hooks - Closing driver
+14:24:34.340 [main] INFO  stepDefs.Hooks - Starting new test scenario
+14:24:53.095 [main] INFO  utility.BrowserUtils - Clicked on product: Kartsız 12 taksit
+Bianchi T0017FS-L 28 Jant 24 Vites 38 cm V-Fren Trekking Bisikleti-Siyah-Lila
+10.100,00 TL
+Sepette 10.050,00 TL
+14:24:55.427 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found special price: 10.050 TL
+14:24:55.428 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+14:24:55.451 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+14:24:57.215 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: true
+14:24:57.216 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 10.050 TL
+14:24:57.216 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 10.050 TL
+14:24:58.259 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 7 price elements
+14:24:58.268 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 12.300,00 TL
+14:24:58.287 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 10.100,00 TL
+14:24:58.300 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 11.600,00 TL
+14:24:58.312 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 12.300,00 TL
+14:24:58.323 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 13.491,00 TL
+14:24:58.333 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 13.681,58 TL
+14:24:58.334 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): [12300, 10100, 11600, 12300, 13491, 13682]
+14:24:58.334 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: [12300, 10100, 11600, 12300, 13491, 13682]
+14:24:58.334 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Minimum other seller price: 10100
+14:24:58.335 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product price: 10050
+14:24:58.335 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product has the best price, adding to cart...
+14:24:58.359 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Closing other sellers view...
+14:24:58.980 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Adding main product to cart...
+14:25:00.585 [main] INFO  stepDefs.Hooks - Closing driver
+14:35:07.269 [main] INFO  stepDefs.Hooks - Starting new test scenario
+14:35:27.797 [main] INFO  utility.BrowserUtils - Clicked on product: JMC Seat Leon- 99/05; Ön Fren Balatası 1,6/1,8/1,9tdı (Kablosuz) (Disk) (156,4X73,8X19,5) (Fmk)
+486,17 TL
+14:35:27.821 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
+14:35:31.068 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found no review text: Henüz değerlendirilmemiş
+14:35:31.089 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: false
+14:35:31.089 [main] WARN  pages.ProductDetailPage.ProductDetailPage - No reviews found. Skipping remaining steps.
+14:35:31.093 [main] INFO  stepDefs.Hooks - Closing driver
+14:38:18.320 [main] INFO  stepDefs.Hooks - Starting new test scenario
+14:38:38.338 [main] INFO  utility.BrowserUtils - Clicked on product: Kartsız 36 taksit
+Ümit 2047 Alpına-L-Bmx-V-Kız Çocuk Bisikleti 332H V 20 Jant Lila
+3
+3.321,99 TL
+14:39:09.094 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 3.321,99 TL
+14:39:09.095 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+14:39:09.123 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+14:39:39.178 [main] ERROR utility.BrowserUtils - Element not clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] - Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64080}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64080/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 15000, pageLoad: 45000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3ad1dbfa3982e5356bce91b728392877
+14:39:39.178 [main] ERROR utility.BrowserUtils - Failed to click element with JavaScript: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] - Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64080}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64080/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 15000, pageLoad: 45000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3ad1dbfa3982e5356bce91b728392877
+14:39:39.179 [main] ERROR pages.ProductDetailPage.ProductDetailPage - Error in checkAndClickIfOtherSellersExists: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64080}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64080/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 15000, pageLoad: 45000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3ad1dbfa3982e5356bce91b728392877
+14:39:39.179 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: false
+14:39:39.180 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 3.321,99 TL
+14:39:39.181 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 3.321,99 TL
+14:39:40.249 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 1 price elements
+14:39:40.249 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): []
+14:39:40.249 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: []
+14:39:40.249 [main] INFO  pages.OtherSellersPage.OtherSellersPage - No other seller prices found, adding main product to cart
+14:39:40.371 [main] INFO  stepDefs.Hooks - Closing driver
+14:45:03.940 [main] INFO  stepDefs.Hooks - Starting new test scenario
+14:45:24.715 [main] INFO  utility.BrowserUtils - Clicked on product: Peak Bisiklet Kadro Amortisör Bisiklet Orta Amortisör
+43
+198,00 TL
+%1
+197,00 TL
+800 TL üzeri 50 TL indirim
+14:45:56.389 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 197,00 TL
+14:45:56.390 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+14:45:56.415 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+14:45:58.018 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: true
+14:45:58.019 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 197,00 TL
+14:45:58.019 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 197,00 TL
+14:45:59.074 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 8 price elements
+14:45:59.084 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 214,00 TL
+14:45:59.092 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 197,00 TL
+14:45:59.101 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 198,00 TL
+14:45:59.109 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 214,00 TL
+14:45:59.118 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 219,00 TL
+14:45:59.126 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 250,00 TL
+14:45:59.136 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 382,00 TL
+14:45:59.136 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): [214, 197, 198, 214, 219, 250, 382]
+14:45:59.136 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: [214, 197, 198, 214, 219, 250, 382]
+14:45:59.137 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Minimum other seller price: 197
+14:45:59.137 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product price: 197
+14:45:59.137 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product has the best price, adding to cart...
+14:45:59.161 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Closing other sellers view...
+14:45:59.733 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Adding main product to cart...
+14:46:01.329 [main] INFO  stepDefs.Hooks - Closing driver
+14:46:39.233 [main] INFO  stepDefs.Hooks - Starting new test scenario
+14:47:00.287 [main] INFO  utility.BrowserUtils - Clicked on product: Mars Flipper Pembe 15 Jant 4 Tekerlekli Çocuk Bisikleti
+1.999,84 TL
+14:47:30.540 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 1.999,84 TL
+14:47:30.541 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+14:48:00.574 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: false
+14:48:00.575 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 1.999,84 TL
+14:48:00.575 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 1.999,84 TL
+14:48:31.646 [main] WARN  pages.OtherSellersPage.OtherSellersPage - other sellers container not found
+14:48:31.647 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: []
+14:48:31.647 [main] INFO  pages.OtherSellersPage.OtherSellersPage - No other seller prices found, adding main product to cart
+14:48:31.755 [main] INFO  stepDefs.Hooks - Closing driver
+14:49:10.409 [main] INFO  stepDefs.Hooks - Starting new test scenario
+14:49:32.030 [main] INFO  utility.BrowserUtils - Clicked on product: Kartsız 36 taksit
+Geroni X-Force - 20" Mtb - 10' - Vitessiz - V.b. - Neon Sarı-Siyah/mavi
+5.365,00 TL
+Sepette 4.828,50 TL
+14:49:35.230 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found special price: 4.828,50 TL
+14:49:35.231 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+14:49:35.274 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+14:49:36.986 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: true
+14:49:36.987 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 4.828,50 TL
+14:49:36.987 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 4.828,50 TL
+14:49:38.042 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 6 price elements
+14:49:38.051 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 5.180,00 TL
+14:49:38.058 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 5.365,00 TL
+14:49:38.067 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 4.997,02 TL
+14:49:38.074 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 5.180,00 TL
+14:49:38.083 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 5.200,00 TL
+14:49:38.083 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): [5180, 5365, 4997, 5180, 5200]
+14:49:38.083 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: [5180, 5365, 4997, 5180, 5200]
+14:49:38.083 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Minimum other seller price: 4997
+14:49:38.084 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product price: 4829
+14:49:38.084 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product has the best price, adding to cart...
+14:49:38.102 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Closing other sellers view...
+14:49:38.668 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Adding main product to cart...
+14:49:40.300 [main] INFO  stepDefs.Hooks - Closing driver
+14:49:49.529 [main] INFO  stepDefs.Hooks - Starting new test scenario
+14:50:17.283 [main] INFO  utility.BrowserUtils - Clicked on product: Kartsız 36 taksit
+Corelli Snoop 3.1 J:27,5 K:18 R: Siyah Yazı R.:gri-Turkuaz
+2
+8.574,02 TL
+%2
+8.402,54 TL
+Sepette 7.982,41 TL
+14:50:19.823 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found special price: 7.982,41 TL
+14:50:19.823 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+14:50:19.934 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+14:50:50.005 [main] ERROR utility.BrowserUtils - Element not clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] - Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51200}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51200/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 15000, pageLoad: 45000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3cc644662818be6971870f64d4f8a10c
+14:50:50.005 [main] ERROR utility.BrowserUtils - Failed to click element with JavaScript: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] - Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51200}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51200/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 15000, pageLoad: 45000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3cc644662818be6971870f64d4f8a10c
+14:50:50.006 [main] ERROR pages.ProductDetailPage.ProductDetailPage - Error in checkAndClickIfOtherSellersExists: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51200}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51200/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 15000, pageLoad: 45000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3cc644662818be6971870f64d4f8a10c
+14:50:50.006 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: false
+14:50:50.007 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 7.982,41 TL
+14:50:50.007 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 7.982,41 TL
+14:50:51.073 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 1 price elements
+14:50:51.074 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): []
+14:50:51.074 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: []
+14:50:51.074 [main] INFO  pages.OtherSellersPage.OtherSellersPage - No other seller prices found, adding main product to cart
+14:50:51.162 [main] INFO  stepDefs.Hooks - Closing driver
+15:00:31.782 [main] INFO  stepDefs.Hooks - Starting new test scenario
+15:00:52.550 [main] INFO  utility.BrowserUtils - Clicked on product: 6
+En çok satan #1
+iPhone 13 128 GB Beyaz
+23.122
+33.489,00 TL
+15:01:22.897 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 33.489,00 TL
+15:01:30.478 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 33.489,00 TL
+15:01:30.508 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 33.489,00 TL
+15:01:30.509 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 33.489,00 TL
+15:01:30.509 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 33489
+15:01:30.511 [main] INFO  stepDefs.Hooks - Closing driver

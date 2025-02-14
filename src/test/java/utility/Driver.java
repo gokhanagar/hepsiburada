@@ -58,7 +58,6 @@ public class Driver {
                 "--remote-allow-origins=*",
                 "--ignore-certificate-errors",
                 "--start-maximized",
-                "--headless",
                 "--disable-infobars"
         );
 
@@ -86,8 +85,8 @@ public class Driver {
 
         options.setExperimentalOption("prefs", prefs);
 
-        options.setPageLoadTimeout(Duration.ofSeconds(45)); // 30 -> 45 saniye
-        options.setImplicitWaitTimeout(Duration.ofSeconds(15)); // 10 -> 15 saniye
+        options.setPageLoadTimeout(Duration.ofSeconds(45));
+        options.setImplicitWaitTimeout(Duration.ofSeconds(15));
         options.setScriptTimeout(Duration.ofSeconds(30));
 
         options.addArguments(

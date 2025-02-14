@@ -10,5 +10,4 @@ public class SearchSteps extends BasePage {
         searchPage().searchForProduct(keyword);
     }
 
-
 }
