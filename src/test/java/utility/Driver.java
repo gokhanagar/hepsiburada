@@ -49,28 +49,31 @@ public class Driver {
 
     private static ChromeDriver createChromeDriver(boolean isHeadless) {
         ChromeOptions options = new ChromeOptions();
-
+        
+        // Temel ayarlar
         options.addArguments(
             "--no-sandbox",
             "--disable-dev-shm-usage",
             "--disable-gpu",
-            "--disable-extensions",
             "--disable-notifications",
             "--remote-allow-origins=*"
         );
 
-        if (System.getenv("CI") != null || isHeadless) {
+        // CI ortamında ek ayarlar
+        if (System.getenv("CI") != null) {
             options.addArguments(
-                "--headless=new",
-                "--window-size=1920,1080"
+                "--window-size=1920,1080",
+                "--disable-extensions",
+                "--disable-popup-blocking"
             );
-        } else {
-            options.addArguments("--start-maximized");
+        } else if (isHeadless) {
+            options.addArguments("--headless=new");
         }
 
-        options.setExperimentalOption("excludeSwitches",
+        // Automation flags'i gizle
+        options.setExperimentalOption("excludeSwitches", 
             new String[]{"enable-automation", "enable-logging"});
-        
+
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("credentials_enable_service", false);
         prefs.put("profile.password_manager_enabled", false);
@@ -100,7 +103,8 @@ public class Driver {
     }
 
     private static void setupDriver(WebDriver driver) {
-        if (System.getenv("CI") == null && ConfigReader.getBoolean("fullscreen")) {
+        // CI ortamında Xvfb kullanıldığı için maximize edebiliriz
+        if (ConfigReader.getBoolean("fullscreen")) {
             driver.manage().window().maximize();
         }
         

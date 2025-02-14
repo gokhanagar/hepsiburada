@@ -24,10 +24,21 @@ jobs:
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1
       with:
-        chrome-version: "stable"
+        chrome-version: "114.0.5735.90"  # Stable ve test edilmiş bir versiyon
         
     - name: Run Tests
-      run: mvn clean test
+      run: |
+        # Install and setup Xvfb
+        sudo apt-get update
+        sudo apt-get install -y xvfb
+        
+        # Start Xvfb
+        Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+        sleep 3
+        export DISPLAY=:99
+        
+        # Run tests without headless mode
+        mvn clean test -Dheadless=false
     
     - name: Store Allure Results
       if: always()
