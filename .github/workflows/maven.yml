@@ -1,3 +1,6 @@
+name: Java CI with Maven
+
+
 
 on:
 
@@ -62,16 +65,16 @@ jobs:
           
           
           mvn clean test \
-          
-            -Dbrowser=chrome \
-          
-            -Dheadless=true \
-          
-            -Dwebdriver.chrome.whitelistedIps="" \
-          
-            -Dselenium.window-size=1920,1080 \
-          
-            -Dwebdriver.chrome.arguments="--no-sandbox,--disable-dev-shm-usage"
+
+          -Dbrowser=chrome \
+
+          -Dheadless=true \
+
+          -Dwebdriver.chrome.whitelistedIps="" \
+
+          -Dselenium.window-size=1920,1080 \
+
+          -Dwebdriver.chrome.arguments="--no-sandbox,--disable-dev-shm-usage"
 
 
 
