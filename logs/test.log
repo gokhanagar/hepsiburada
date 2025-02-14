@@ -879,3 +879,28 @@ Session ID: 5e1b32bd98f097ceab248907f1e901be
 06:08:03.619 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found review button, clicking
 06:08:05.806 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: true
 06:08:09.290 [main] INFO  stepDefs.Hooks - Closing driver
+06:16:17.956 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:16:24.653 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:16:30.323 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:17:18.475 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 59.749,00 TL
+06:17:25.191 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 59.749,00 TL
+06:17:25.256 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 59.749,00 TL
+06:17:25.256 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 59.749,00 TL
+06:17:25.256 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 59749
+06:17:25.261 [main] INFO  stepDefs.Hooks - Closing driver
+06:17:25.773 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:17:30.030 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:17:34.856 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:18:18.746 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 9.729,00 TL
+06:18:18.749 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+06:18:48.768 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: false
+06:18:48.770 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 9.729,00 TL
+06:18:48.770 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 9.729,00 TL
+06:19:19.863 [main] WARN  pages.OtherSellersPage.OtherSellersPage - other sellers container not found
+06:19:19.863 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: []
+06:19:19.864 [main] INFO  pages.OtherSellersPage.OtherSellersPage - No other seller prices found, adding main product to cart
+06:19:20.111 [main] INFO  stepDefs.Hooks - Closing driver
+06:19:20.493 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:19:24.398 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:19:30.724 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:19:42.112 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
