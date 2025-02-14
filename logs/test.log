@@ -823,3 +823,59 @@ Session ID: 38e1eb3cded55c6fddc36991eaf5f437
 05:46:10.651 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 24.599,00 TL
 05:46:10.652 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 24599
 05:46:10.654 [main] INFO  stepDefs.Hooks - Closing driver
+06:02:46.357 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:02:53.199 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:02:57.824 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:03:39.935 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 33.599,00 TL
+06:03:47.320 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 33.599,00 TL
+06:03:47.395 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 33.599,00 TL
+06:03:47.396 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 33.599,00 TL
+06:03:47.396 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 33599
+06:03:47.402 [main] INFO  stepDefs.Hooks - Closing driver
+06:03:47.954 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:03:52.484 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:03:57.601 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:04:16.720 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found special price: 7.982,41 TL
+06:04:16.721 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+06:04:16.769 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+06:04:46.835 [main] ERROR utility.BrowserUtils - Element not clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] - Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:9222/devtool..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5e1b32bd98f097ceab248907f1e901be
+06:04:46.835 [main] ERROR utility.BrowserUtils - Failed to click element with JavaScript: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] - Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:9222/devtool..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5e1b32bd98f097ceab248907f1e901be
+06:04:46.836 [main] ERROR pages.ProductDetailPage.ProductDetailPage - Error in checkAndClickIfOtherSellersExists: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='vzN3xHW3ClslJV_iYDc1']//button[@class='M6iJLUpgHKlEPzGcOggE'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:9222/devtool..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5e1b32bd98f097ceab248907f1e901be
+06:04:46.836 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: false
+06:04:46.838 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 7.982,41 TL
+06:04:46.838 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 7.982,41 TL
+06:04:47.959 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 1 price elements
+06:04:47.959 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): []
+06:04:47.960 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: []
+06:04:47.960 [main] INFO  pages.OtherSellersPage.OtherSellersPage - No other seller prices found, adding main product to cart
+06:04:48.181 [main] INFO  stepDefs.Hooks - Closing driver
+06:04:48.563 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:04:53.493 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:04:57.848 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:05:08.579 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
+06:05:10.893 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found no review text: Henüz değerlendirilmemiş
+06:05:11.035 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: false
+06:05:11.036 [main] WARN  pages.ProductDetailPage.ProductDetailPage - No reviews found. Skipping remaining steps.
+06:05:11.042 [main] INFO  stepDefs.Hooks - Closing driver
+06:07:04.397 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:07:17.160 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:07:22.471 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:07:33.158 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
+06:08:03.619 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found review button, clicking
+06:08:05.806 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: true
+06:08:09.290 [main] INFO  stepDefs.Hooks - Closing driver

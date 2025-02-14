@@ -24,19 +24,10 @@ jobs:
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1
       with:
-        chrome-version: "stable"  # Latest stable version
+        chrome-version: "stable"
         
     - name: Run Tests
-      run: |
-        sudo apt-get install -y xvfb
-        export DISPLAY=:99
-        Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
-        sleep 3
-        
-        mvn clean test \
-          -Dbrowser=chrome \
-          -Dheadless=true \
-          -Dwebdriver.chrome.whitelistedIps=""
+      run: mvn clean test
     
     - name: Store Allure Results
       if: always()

@@ -51,47 +51,31 @@ public class Driver {
         ChromeOptions options = new ChromeOptions();
 
         options.addArguments(
-            "--remote-allow-origins=*",
-            "--disable-notifications",
-            "--window-size=1920,1080",
-            "--disable-popup-blocking",
-            "--disable-blink-features=AutomationControlled",
-            "--disable-infobars",
+            "--no-sandbox",
+            "--disable-dev-shm-usage",
+            "--disable-gpu",
             "--disable-extensions",
-            "--remote-debugging-port=9222"
+            "--disable-notifications",
+            "--remote-allow-origins=*"
         );
+
+        if (System.getenv("CI") != null || isHeadless) {
+            options.addArguments(
+                "--headless=new",
+                "--window-size=1920,1080"
+            );
+        } else {
+            options.addArguments("--start-maximized");
+        }
+
+        options.setExperimentalOption("excludeSwitches",
+            new String[]{"enable-automation", "enable-logging"});
         
-        options.addArguments("--disable-blink-features=AutomationControlled");
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("credentials_enable_service", false);
         prefs.put("profile.password_manager_enabled", false);
         options.setExperimentalOption("prefs", prefs);
 
-        options.setExperimentalOption("excludeSwitches", 
-            new String[]{"enable-automation", "enable-logging"});
-        options.setExperimentalOption("useAutomationExtension", false);
-        
-
-        options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
-            "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36");
-
-        if (isHeadless) {
-            options.addArguments(
-                "--headless=new",
-                "--disable-gpu",
-                "--no-sandbox",
-                "--disable-dev-shm-usage"
-            );
-        }
-        
-
-        if (System.getenv("CI") != null) {
-            options.addArguments(
-                "--disable-dev-shm-usage",
-                "--no-sandbox"
-            );
-        }
-        
         return new ChromeDriver(options);
     }
 
@@ -116,9 +100,7 @@ public class Driver {
     }
 
     private static void setupDriver(WebDriver driver) {
-        boolean isFullScreen = ConfigReader.getBoolean("fullscreen");
-        
-        if (isFullScreen) {
+        if (System.getenv("CI") == null && ConfigReader.getBoolean("fullscreen")) {
             driver.manage().window().maximize();
         }
         
