@@ -26,7 +26,6 @@ public class HomePageSteps extends BasePage {
     @And("user accepts cookies")
     public void userAcceptsCookies() {
         homePage().acceptCookie();
-        homePage()
-                .checkAndHandleSecurityRedirect();
+        //homePage().checkAndHandleSecurityRedirect();
     }
 }
