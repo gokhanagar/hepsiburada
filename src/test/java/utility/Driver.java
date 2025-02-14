@@ -57,12 +57,12 @@ public class Driver {
             "--disable-notifications",
             "--remote-allow-origins=*",
             "--ignore-certificate-errors",
-            "--start-maximized"
+            "--start-maximized",
+            "--headless"
         );
 
         if (System.getenv("CI") != null) {
             options.addArguments(
-                "--headless=new",
                 "--window-size=1920,1080",
                 "--disable-extensions",
                 "--disable-popup-blocking",
@@ -114,7 +114,6 @@ public class Driver {
         if (ConfigReader.getBoolean("fullscreen")) {
             driver.manage().window().maximize();
         }
-        
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ConfigReader.getInt("implicit.wait")));
     }
 

@@ -41,9 +41,7 @@ jobs:
 
       - name: Run Tests
         run: |
-          mvn clean test \
-            -Dbrowser=chrome \
-            -Dheadless=true 
+          mvn -B package --file pom.xml test
 
       - name: Generate Allure Report
         if: always()
