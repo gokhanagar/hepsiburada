@@ -104,7 +104,6 @@ public class Driver {
     }
 
     private static void setupDriver(WebDriver driver) {
-        // CI ortamında Xvfb kullanıldığı için maximize edebiliriz
         if (ConfigReader.getBoolean("fullscreen")) {
             driver.manage().window().maximize();
         }
