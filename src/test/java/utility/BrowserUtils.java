@@ -36,7 +36,7 @@ public class BrowserUtils {
     public static void clickWithJS(By locator) {
         try {
             logger.debug("Attempting to click element with JavaScript: {}", locator);
-            WebElement element = waitForVisibility(locator, 10);
+            WebElement element = waitForClickability(locator, 10);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollIntoView(true);", element);
             js.executeScript("arguments[0].click();", element);
@@ -49,7 +49,7 @@ public class BrowserUtils {
 
     public static void click(By locator) {
         try {
-            WebElement element = waitForVisibility(locator, 10);
+            WebElement element = waitForClickability(locator, 10);
             element.click();
             logger.debug("Successfully clicked element: {}", locator);
         } catch (Exception e) {

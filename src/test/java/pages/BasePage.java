@@ -1,9 +1,18 @@
 package pages;
 
+import pages.ProductCartPage.ProductCartPage;
+import pages.HomePage.HomePage;
+import pages.OtherSellersPage.OtherSellersPage;
+import pages.ProductDetailPage.ProductDetailPage;
+import pages.ProductReviewsPage.ProductReviewsPage;
+import pages.SearchPage.SearchPage;
+import pages.SearchResultsPage.SearchResultsPage;
+
 public abstract class BasePage {
 
     private HomePage homePage;
     private SearchResultsPage searchResultsPage;
+    private SearchPage searchPage;
     private ProductDetailPage productDetailPage;
     private ProductReviewsPage productReviewsPage;
     private OtherSellersPage otherSellersPage;
@@ -14,6 +23,13 @@ public abstract class BasePage {
             homePage = new HomePage();
         }
         return homePage;
+    }
+
+    public SearchPage searchPage(){
+        if (searchPage == null){
+            searchPage = new SearchPage();
+        }
+        return searchPage;
     }
 
     public SearchResultsPage searchResultsPage(){

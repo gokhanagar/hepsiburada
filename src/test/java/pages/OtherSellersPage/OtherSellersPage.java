@@ -1,4 +1,4 @@
-package pages;
+package pages.OtherSellersPage;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,19 +8,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import pages.BasePage;
 
 import static stepDefs.Hooks.driver;
 import static utility.BrowserUtils.clickWithJS;
 import static utility.BrowserUtils.isElementDisplayed;
 import static utility.BrowserUtils.waitForDOMStability;
 
-public class OtherSellersPage extends BasePage{
+public class OtherSellersPage extends BasePage {
     private static final Logger logger = LogManager.getLogger(OtherSellersPage.class);
 
     private final By closeButton = By.cssSelector("div[data-test-id='drawer-close']");
     private final By otherSellersContainer = By.xpath("//a[contains(@data-test-id, 'merchant-name')]");
     private final By otherSellersPriceList = By.xpath("//div[@data-test-id='price-current-price']");
     private final By otherSellersProductAddToCartButton = By.xpath("//button[text()='Sepete ekle']");
+
+    public By getCloseButton(){return closeButton;}
 
 
     private List<Integer> getAllSellerPrices() {
@@ -58,25 +61,6 @@ public class OtherSellersPage extends BasePage{
         }
     }
 
-    private void addMainProductToCart() {
-        try {
-            if (isElementDisplayed(closeButton)) {
-                logger.info("Closing other sellers view...");
-                clickWithJS(closeButton);
-                waitForDOMStability(5);
-            } else {
-                logger.info("No close button found, proceeding with main product");
-            }
-            
-            logger.info("Adding main product to cart...");
-            clickWithJS(productDetailPage().productAddToCartButton());
-            waitForDOMStability(2);
-            
-        } catch (Exception e) {
-            logger.error("Error adding main product to cart: {}", e.getMessage());
-            throw e;
-        }
-    }
 
     private void clickSellerButton(int targetPrice, List<Integer> prices, List<WebElement> buttons) {
         try {
@@ -112,7 +96,7 @@ public class OtherSellersPage extends BasePage{
 
 
 
-    public void addLowestPriceToCart() {
+    public void addTheCheapestProductToCart() {
         try {
             String mainPrice = productDetailPage().getMainProductPrice();
             int mainProductPrice = convertPriceToInteger(mainPrice);
@@ -134,7 +118,7 @@ public class OtherSellersPage extends BasePage{
             
             if (mainProductPrice <= minOtherPrice) {
                 logger.info("Main product has the best price, adding to cart...");
-                addMainProductToCart();
+                productDetailPage().addMainProductToCart();
             } else {
                 logger.info("Found better price from other seller, adding to cart...");
                 clickSellerButton(minOtherPrice, otherPrices, new ArrayList<>());

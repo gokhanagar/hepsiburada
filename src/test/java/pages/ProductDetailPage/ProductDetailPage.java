@@ -1,16 +1,17 @@
-package pages;
+package pages.ProductDetailPage;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import pages.BasePage;
 
 import static utility.BrowserUtils.clickWithJS;
 import static utility.BrowserUtils.getElementText;
 import static utility.BrowserUtils.isElementDisplayed;
 import static utility.BrowserUtils.waitForDOMStability;
 
-public class ProductDetailPage extends BasePage{
+public class ProductDetailPage extends BasePage {
     private static final Logger logger = LogManager.getLogger(ProductDetailPage.class);
     private static boolean hasReview = false;
     private static boolean hasOtherSellers = false;
@@ -47,7 +48,7 @@ public class ProductDetailPage extends BasePage{
         }
     }
 
-    public ProductDetailPage switchToDegerlendirmelerTab() {
+    public ProductDetailPage switchToReviewsTab() {
         checkAndClickIfReviewExists();
         logger.info("Has review result: {}", hasReview);
 
@@ -82,7 +83,7 @@ public class ProductDetailPage extends BasePage{
         return this;
     }
 
-    public String getpriceText() {
+    public String getMainProductPriceText() {
         try {
             if (isElementDisplayed(specialPriceText)) {
                 mainProductPrice = getElementText(specialPriceText);
@@ -102,7 +103,7 @@ public class ProductDetailPage extends BasePage{
 
     public String getMainProductPrice() {
         if (mainProductPrice == null || mainProductPrice.isEmpty()) {
-            mainProductPrice = getpriceText();
+            mainProductPrice = getMainProductPriceText();
         }
         logger.info("Getting main product price: {}", mainProductPrice);
         return mainProductPrice;
@@ -121,6 +122,26 @@ public class ProductDetailPage extends BasePage{
             waitForDOMStability(5);
         } catch (Exception e) {
             logger.error("Error adding product to cart: {}", e.getMessage());
+            throw e;
+        }
+    }
+
+    public void addMainProductToCart() {
+        try {
+            if (isElementDisplayed(otherSellersPage().getCloseButton())) {
+                logger.info("Closing other sellers view...");
+                clickWithJS(otherSellersPage().getCloseButton());
+                waitForDOMStability(5);
+            } else {
+                logger.info("No close button found, proceeding with main product");
+            }
+
+            logger.info("Adding main product to cart...");
+            clickWithJS(productDetailPage().productAddToCartButton());
+            waitForDOMStability(2);
+
+        } catch (Exception e) {
+            logger.error("Error adding main product to cart: {}", e.getMessage());
             throw e;
         }
     }

@@ -1,23 +1,25 @@
-package stepDefs;
+package stepDefs.ProductCartSteps;
 
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+
 import org.junit.Assert;
 import pages.BasePage;
 
-public class CartSteps extends BasePage {
+public class ProductCartSteps extends BasePage {
 
-    @When("add the product to the cart")
-    public void addTheProductToTheCart() {productDetailPage().addProductToCart();}
-
+    @Then("verify user is on the cart page")
+    public void verifyUserIsOnTheCartPage() {
+        Assert.assertTrue(productCartPage().getMyCart().isDisplayed());
+    }
 
     @Then("compare the product price with the cart price")
     public void compareTheProductPriceWithTheCartPrice() {
-        Assert.assertTrue(productCartPage().getMyCart().isDisplayed());
 
         int mainProductPrice = productDetailPage().getMainProductPriceNumber();
         int productPriceOnTheCart = productCartPage().getProductPriceOnTheCartNumber();
         Assert.assertEquals(mainProductPrice,productPriceOnTheCart);
 
     }
+
+
 }
