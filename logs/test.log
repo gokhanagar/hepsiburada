@@ -1020,3 +1020,44 @@ Session ID: 410e56516793fe12c561468d8864ba7d
 07:05:37.692 [main] INFO  stepDefs.Hooks - Starting new test scenario
 07:05:42.892 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
 07:05:43.642 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+07:07:41.242 [main] INFO  stepDefs.Hooks - Starting new test scenario
+07:08:04.028 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+07:08:08.603 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+07:08:52.888 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 33.599,00 TL
+07:08:59.493 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 33.599,00 TL
+07:08:59.562 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 33.599,00 TL
+07:08:59.563 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 33.599,00 TL
+07:08:59.563 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 33599
+07:08:59.567 [main] INFO  stepDefs.Hooks - Closing driver
+07:09:00.067 [main] INFO  stepDefs.Hooks - Starting new test scenario
+07:09:07.139 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+07:09:09.620 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+07:09:52.592 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 2.282,88 TL
+07:09:52.594 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+07:09:52.618 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+07:09:53.236 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: true
+07:09:53.237 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 2.282,88 TL
+07:09:53.237 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 2.282,88 TL
+07:09:54.285 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 5 price elements
+07:09:54.292 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 2.282,88 TL
+07:09:54.302 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 2.190,00 TL
+07:09:54.310 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 2.282,88 TL
+07:09:54.318 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 2.282,88 TL
+07:09:54.318 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): [2283, 2190, 2283, 2283]
+07:09:54.319 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: [2283, 2190, 2283, 2283]
+07:09:54.319 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Minimum other seller price: 2190
+07:09:54.319 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product price: 2283
+07:09:54.319 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found better price from other seller, adding to cart...
+07:09:54.319 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Looking for button with price: 2190
+07:09:54.837 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Total prices: 4
+07:09:54.837 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Total buttons found: 4
+07:09:54.837 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found matching price at index: 1
+07:09:55.436 [main] INFO  stepDefs.Hooks - Closing driver
+07:09:55.649 [main] INFO  stepDefs.Hooks - Starting new test scenario
+07:09:58.919 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+07:10:03.816 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+07:10:14.562 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
+07:10:17.188 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found no review text: Henüz değerlendirilmemiş
+07:10:17.210 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: false
+07:10:17.211 [main] WARN  pages.ProductDetailPage.ProductDetailPage - No reviews found. Skipping remaining steps.
+07:10:17.213 [main] INFO  stepDefs.Hooks - Closing driver
