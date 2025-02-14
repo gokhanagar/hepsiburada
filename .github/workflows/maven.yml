@@ -36,7 +36,7 @@ jobs:
           -Dheadless=true \
           -Dwebdriver.chrome.whitelistedIps="" \
           -Dselenium.window-size=1920,1080 \
-          -Dwebdriver.chrome.arguments="--no-sandbox,--disable-dev-shm-usage"
+          -Dwebdriver.chrome.arguments="--no-sandbox,--disable-dev-shm-usage,--disable-gpu"
 
       - name: Generate Allure Report
         if: always()

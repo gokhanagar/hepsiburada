@@ -133,7 +133,7 @@
         </build>
         </profile>
 
-        <!-- Failed testler için yeni profil -->
+
         <profile>
             <id>failed-tests</id>
             <build>
