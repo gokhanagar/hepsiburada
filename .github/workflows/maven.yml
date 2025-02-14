@@ -21,35 +21,33 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
-    - name: Setup Chrome
-      uses: browser-actions/setup-chrome@v1
-      with:
-        chrome-version: stable
-    
-    - name: Setup ChromeDriver
-      uses: nanasess/setup-chromedriver@v2
-      with:
-        chromedriver-version: latest
+    - name: Setup Chrome and ChromeDriver
+      run: |
+        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/sources.list.d/google.list'
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+        CHROME_VERSION=$(google-chrome --version | cut -d " " -f3 | cut -d "." -f1)
+        CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
+        wget -N "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
+        unzip chromedriver_linux64.zip
+        chmod +x chromedriver
+        sudo mv chromedriver /usr/local/bin/
+        google-chrome --version
+        chromedriver --version
         
     - name: Run Tests
       run: |
-        # Start Xvfb
         sudo apt-get install -y xvfb
         export DISPLAY=:99
         Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
         sleep 3
         
-        # Start ChromeDriver
-        chromedriver --version
-        chrome --version
-        
-        # Run tests
         mvn clean test \
           -Dbrowser=chrome \
           -Dheadless=true \
           -Dwebdriver.chrome.whitelistedIps="" \
-          -Dselenium.window-size=1920,1080 \
-          -Dwebdriver.chrome.args="--no-sandbox,--disable-dev-shm-usage,--remote-debugging-port=9222"
+          -Dselenium.window-size=1920,1080
     
     - name: Generate Allure Report
       if: always()

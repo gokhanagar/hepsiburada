@@ -84,7 +84,7 @@ public class Driver {
             );
         }
         
-        
+
         if (System.getenv("CI") != null) {
             options.addArguments(
                 "--disable-dev-shm-usage",
