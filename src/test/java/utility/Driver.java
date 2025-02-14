@@ -50,28 +50,29 @@ public class Driver {
     private static ChromeDriver createChromeDriver(boolean isHeadless) {
         ChromeOptions options = new ChromeOptions();
         
-        // Temel ayarlar
         options.addArguments(
             "--no-sandbox",
             "--disable-dev-shm-usage",
             "--disable-gpu",
             "--disable-notifications",
-            "--remote-allow-origins=*"
+            "--remote-allow-origins=*",
+            "--ignore-certificate-errors",
+            "--start-maximized"
         );
 
-        // CI ortamında ek ayarlar
         if (System.getenv("CI") != null) {
             options.addArguments(
+                "--headless=new",
                 "--window-size=1920,1080",
                 "--disable-extensions",
-                "--disable-popup-blocking"
+                "--disable-popup-blocking",
+                "--disable-blink-features=AutomationControlled"
             );
         } else if (isHeadless) {
             options.addArguments("--headless=new");
         }
 
-        // Automation flags'i gizle
-        options.setExperimentalOption("excludeSwitches", 
+        options.setExperimentalOption("excludeSwitches",
             new String[]{"enable-automation", "enable-logging"});
 
         Map<String, Object> prefs = new HashMap<>();
