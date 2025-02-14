@@ -191,4 +191,24 @@ public class BrowserUtils {
         }
     }
 
+    public static void waitForPageToLoad() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            
+            // Sayfa yüklenene kadar bekle
+            wait.until(webDriver -> ((JavascriptExecutor) webDriver)
+                .executeScript("return document.readyState").equals("complete"));
+            
+            // AJAX isteklerinin tamamlanmasını bekle
+            wait.until(webDriver -> ((JavascriptExecutor) webDriver)
+                .executeScript("return jQuery.active == 0"));
+            
+            // Animasyonların tamamlanmasını bekle
+            Thread.sleep(1000);
+            
+        } catch (Exception e) {
+            logger.warn("Page load wait error (continuing): {}", e.getMessage());
+        }
+    }
+
 }
