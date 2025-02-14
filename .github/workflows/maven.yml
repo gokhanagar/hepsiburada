@@ -1,107 +1,54 @@
 name: Java CI with Maven
 
-
-
 on:
-
   workflow_dispatch:
-
   push:
-
     branches: [ "main" ]
-
   pull_request:
-
     branches: [ "main" ]
-
-
 
 jobs:
-
   test:
-
     runs-on: ubuntu-latest
 
-
-
     steps:
-
       - uses: actions/checkout@v4
 
-
-
       - name: Set up JDK 17
-
         uses: actions/setup-java@v4
-
         with:
-
           java-version: '17'
-
           distribution: 'temurin'
-
           cache: maven
 
-
-
       - name: Setup Chrome
-
         uses: browser-actions/setup-chrome@v1
 
-
-
       - name: Run Tests
-
         run: |
-          
           sudo apt-get install -y xvfb
-          
           export DISPLAY=:99
-          
           Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
-          
           sleep 3
           
-          
-          
           mvn clean test \
-
           -Dbrowser=chrome \
-
           -Dheadless=true \
-
           -Dwebdriver.chrome.whitelistedIps="" \
-
           -Dselenium.window-size=1920,1080 \
-
           -Dwebdriver.chrome.arguments="--no-sandbox,--disable-dev-shm-usage"
 
-
-
       - name: Generate Allure Report
-
         if: always()
-
         run: |
-          
           mvn allure:report
-          
           mkdir -p allure-results
-          
           cp -r target/allure-results/* allure-results/
 
-
-
       - name: Store Allure Results
-
         if: always()
-
         uses: actions/upload-artifact@v4
-
         with:
-
           name: allure-results
-
           path: allure-results
-
           retention-days: 30

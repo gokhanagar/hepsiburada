@@ -904,3 +904,42 @@ Session ID: 5e1b32bd98f097ceab248907f1e901be
 06:19:24.398 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
 06:19:30.724 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
 06:19:42.112 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
+06:26:54.865 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:27:02.578 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:27:03.242 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:27:05.692 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+06:27:06.680 [main] INFO  stepDefs.Hooks - Closing driver
+06:27:07.316 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:27:12.470 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:27:14.323 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:27:56.746 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 11.900,00 TL
+06:27:56.749 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+06:28:26.770 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: false
+06:28:26.774 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 11.900,00 TL
+06:28:26.775 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 11.900,00 TL
+06:28:57.846 [main] WARN  pages.OtherSellersPage.OtherSellersPage - other sellers container not found
+06:28:57.847 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: []
+06:28:57.847 [main] INFO  pages.OtherSellersPage.OtherSellersPage - No other seller prices found, adding main product to cart
+06:28:58.183 [main] INFO  stepDefs.Hooks - Closing driver
+06:28:58.550 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:29:02.560 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:29:07.666 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:29:18.554 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
+06:29:21.854 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found no review text: Henüz değerlendirilmemiş
+06:29:21.888 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: false
+06:29:21.888 [main] WARN  pages.ProductDetailPage.ProductDetailPage - No reviews found. Skipping remaining steps.
+06:29:21.890 [main] INFO  stepDefs.Hooks - Closing driver
+06:31:28.750 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:31:34.691 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:31:35.558 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:31:37.139 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+06:31:37.704 [main] INFO  stepDefs.Hooks - Closing driver
+06:32:07.560 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:32:14.829 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:32:15.699 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:33:09.948 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 64.933,09 TL
+06:33:18.528 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 64.933,09 TL
+06:33:18.611 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 64.933,09 TL
+06:33:18.611 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 64.933,09 TL
+06:33:18.612 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 64933
+06:33:18.615 [main] INFO  stepDefs.Hooks - Closing driver
