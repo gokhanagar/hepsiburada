@@ -5,8 +5,8 @@ Feature: Product Addition and Price Verification
     Given user navigate to hepsiburada.com
 
   Scenario: US3 - Add a product to cart and compare product price with cart price
-    Then user verify home page is displayed
     And user accepts cookies
+    Then user verify home page is displayed
     When user search for "iphone" which is popular and has comments
     Then user verify "iphone" is displayed in search result page
     And select a random product from the search results and navigate to the product details page

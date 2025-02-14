@@ -5,8 +5,8 @@ Feature: Product Cart Operations
     Given user navigate to hepsiburada.com
 
   Scenario: US2 - Add cheapest product to cart
-    Then user verify home page is displayed
     And user accepts cookies
+    Then user verify home page is displayed
     When user search for "bisiklet" which is popular and has comments
     Then user verify "bisiklet" is displayed in search result page
     And select a random product from the search results and navigate to the product details page

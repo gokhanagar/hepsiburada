@@ -5,8 +5,8 @@ Feature: Product Review Sorting and Feedback
     Given user navigate to hepsiburada.com
 
   Scenario: US1 - Sort product reviews by newest and give feedback
-    Then user verify home page is displayed
     And user accepts cookies
+    Then user verify home page is displayed
     When user search for "balata" which is popular and has comments
     Then user verify "balata" is displayed in search result page
     And select a random product from the search results and navigate to the product details page

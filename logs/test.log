@@ -1008,3 +1008,15 @@ Session ID: 410e56516793fe12c561468d8864ba7d
 07:02:31.177 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Closing other sellers view...
 07:02:31.806 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Adding main product to cart...
 07:02:33.704 [main] INFO  stepDefs.Hooks - Closing driver
+07:04:34.006 [main] INFO  stepDefs.Hooks - Starting new test scenario
+07:04:39.963 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+07:04:44.328 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+07:05:30.001 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 64.929,00 TL
+07:05:37.092 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 64.929,00 TL
+07:05:37.152 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 64.929,00 TL
+07:05:37.152 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 64.929,00 TL
+07:05:37.152 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 64929
+07:05:37.157 [main] INFO  stepDefs.Hooks - Closing driver
+07:05:37.692 [main] INFO  stepDefs.Hooks - Starting new test scenario
+07:05:42.892 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+07:05:43.642 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
