@@ -12,7 +12,7 @@ import utility.ConfigReader;
 public class HomePage extends BasePage {
     private static final Logger logger = LogManager.getLogger(HomePage.class);
 
-    private final By selectedPopularProductText = By.xpath("(//h3[@data-test-id='Recommendation-title'])[1]");
+    private final By selectedPopularProductText = By.xpath("(//div[@data-test-id='Recommendation']//h3[@data-test-id='Recommendation-title'])[1]");
     private final By cookieButton = By.cssSelector("button[id='onetrust-accept-btn-handler']");
 
     public By getSelectedPopularProductText() {return selectedPopularProductText;}
@@ -34,9 +34,9 @@ public class HomePage extends BasePage {
 
             if (driver.getCurrentUrl().contains("security")) {
                 String baseUrl = ConfigReader.get("base.url");
-                driver.get(baseUrl);;}
+                driver.get(baseUrl);}
 
-            waitForDOMStability(20);
+            waitForDOMStability(30);
             return this;
     }
 

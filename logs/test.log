@@ -943,3 +943,68 @@ Session ID: 5e1b32bd98f097ceab248907f1e901be
 06:33:18.611 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 64.933,09 TL
 06:33:18.612 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 64933
 06:33:18.615 [main] INFO  stepDefs.Hooks - Closing driver
+06:52:30.966 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:52:36.733 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:52:41.389 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:53:28.480 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 2.229,00 TL
+06:53:35.488 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 2.229,00 TL
+06:53:35.587 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 2.229,00 TL
+06:53:35.588 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 2.229,00 TL
+06:53:35.588 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 2229
+06:53:35.593 [main] INFO  stepDefs.Hooks - Closing driver
+06:56:03.807 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:56:11.334 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:56:14.460 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:56:59.516 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 59.599,00 TL
+06:57:06.114 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 59.599,00 TL
+06:57:06.180 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 59.599,00 TL
+06:57:06.180 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 59.599,00 TL
+06:57:06.180 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 59599
+06:57:06.184 [main] INFO  stepDefs.Hooks - Closing driver
+06:57:06.730 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:57:11.280 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:57:17.652 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:57:50.653 [main] ERROR utility.BrowserUtils - Element not visible: By.cssSelector: h1[data-test-id='header-h1'] - Expected condition failed: waiting for visibility of element located by By.cssSelector: h1[data-test-id='header-h1'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57035}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57035/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 410e56516793fe12c561468d8864ba7d
+06:57:50.653 [main] ERROR utility.BrowserUtils - Failed to get element text: By.cssSelector: h1[data-test-id='header-h1'] - Expected condition failed: waiting for visibility of element located by By.cssSelector: h1[data-test-id='header-h1'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57035}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57035/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 410e56516793fe12c561468d8864ba7d
+06:57:50.682 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+06:57:51.270 [main] INFO  stepDefs.Hooks - Closing driver
+06:57:51.585 [main] INFO  stepDefs.Hooks - Starting new test scenario
+06:57:56.873 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+06:58:01.519 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+06:58:14.524 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
+06:58:18.065 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found no review text: Henüz değerlendirilmemiş
+06:58:18.129 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: false
+06:58:18.129 [main] WARN  pages.ProductDetailPage.ProductDetailPage - No reviews found. Skipping remaining steps.
+06:58:18.132 [main] INFO  stepDefs.Hooks - Closing driver
+07:01:34.239 [main] INFO  stepDefs.Hooks - Starting new test scenario
+07:01:40.662 [main] INFO  pages.HomePage.HomePage - Attempting to accept cookies...
+07:01:45.254 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+07:02:27.182 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 200,00 TL
+07:02:27.183 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+07:02:27.221 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+07:02:28.918 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: true
+07:02:28.920 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 200,00 TL
+07:02:28.920 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 200,00 TL
+07:02:31.066 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 5 price elements
+07:02:31.084 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 290,00 TL
+07:02:31.102 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 200,00 TL
+07:02:31.124 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 250,00 TL
+07:02:31.141 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 290,00 TL
+07:02:31.142 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): [290, 200, 250, 290]
+07:02:31.142 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: [290, 200, 250, 290]
+07:02:31.142 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Minimum other seller price: 200
+07:02:31.142 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product price: 200
+07:02:31.142 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product has the best price, adding to cart...
+07:02:31.177 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Closing other sellers view...
+07:02:31.806 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Adding main product to cart...
+07:02:33.704 [main] INFO  stepDefs.Hooks - Closing driver
