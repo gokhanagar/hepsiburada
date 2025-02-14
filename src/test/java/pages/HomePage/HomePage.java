@@ -11,9 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pages.BasePage;
 import static stepDefs.Hooks.driver;
-import static utility.BrowserUtils.isElementDisplayed;
-import static utility.BrowserUtils.waitForDOMStability;
-import static utility.BrowserUtils.waitForVisibility;
+import static utility.BrowserUtils.*;
+
 import utility.ConfigReader;
 
 public class HomePage extends BasePage {
@@ -29,12 +28,9 @@ public class HomePage extends BasePage {
 
     public HomePage acceptCookie() {
         try {
-            logger.info("Waiting for cookie button...");
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.elementToBeClickable(cookieButton)).click();
-            logger.info("Successfully accepted cookies");
-        } catch (TimeoutException e) {
-            logger.warn("Cookie button not found or not clickable, continuing...");
+
+            click(cookieButton);
+            waitForDOMStability(20);
         } catch (Exception e) {
             logger.error("Failed to accept cookies: {}", e.getMessage());
         }
@@ -47,7 +43,6 @@ public class HomePage extends BasePage {
                 String baseUrl = ConfigReader.get("base.url");
                 driver.get(baseUrl);
             }
-
             waitForDOMStability(20);
             return this;
         } catch (Exception e) {

@@ -1141,3 +1141,70 @@ Session ID: 410e56516793fe12c561468d8864ba7d
 07:38:25.487 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found review button, clicking
 07:38:27.499 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: true
 07:38:29.226 [main] INFO  stepDefs.Hooks - Closing driver
+07:41:48.584 [main] INFO  stepDefs.Hooks - Starting new test scenario
+07:41:52.762 [main] INFO  pages.HomePage.HomePage - Waiting for cookie button...
+07:41:53.852 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+07:41:57.353 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+07:41:57.803 [main] INFO  stepDefs.Hooks - Closing driver
+07:41:58.127 [main] INFO  stepDefs.Hooks - Starting new test scenario
+07:42:00.346 [main] INFO  pages.HomePage.HomePage - Waiting for cookie button...
+07:42:01.031 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+07:42:33.986 [main] ERROR utility.BrowserUtils - Element not visible: By.cssSelector: h1[data-test-id='header-h1'] - Expected condition failed: waiting for visibility of element located by By.cssSelector: h1[data-test-id='header-h1'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51440}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51440/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 23fbf9b58b08421bec901823e1d7a199
+07:42:33.986 [main] ERROR utility.BrowserUtils - Failed to get element text: By.cssSelector: h1[data-test-id='header-h1'] - Expected condition failed: waiting for visibility of element located by By.cssSelector: h1[data-test-id='header-h1'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51440}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51440/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 23fbf9b58b08421bec901823e1d7a199
+07:42:33.991 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+07:42:34.248 [main] INFO  stepDefs.Hooks - Closing driver
+07:42:34.465 [main] INFO  stepDefs.Hooks - Starting new test scenario
+07:42:35.786 [main] INFO  pages.HomePage.HomePage - Waiting for cookie button...
+07:42:38.423 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+07:43:11.321 [main] ERROR utility.BrowserUtils - Element not visible: By.cssSelector: h1[data-test-id='header-h1'] - Expected condition failed: waiting for visibility of element located by By.cssSelector: h1[data-test-id='header-h1'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51661}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51661/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8e65f1c8c177dd17c025e5d38002d9c7
+07:43:11.322 [main] ERROR utility.BrowserUtils - Failed to get element text: By.cssSelector: h1[data-test-id='header-h1'] - Expected condition failed: waiting for visibility of element located by By.cssSelector: h1[data-test-id='header-h1'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51661}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51661/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8e65f1c8c177dd17c025e5d38002d9c7
+07:43:11.325 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+07:43:11.595 [main] INFO  stepDefs.Hooks - Closing driver
+07:46:46.504 [main] INFO  stepDefs.Hooks - Starting new test scenario
+07:46:49.537 [main] INFO  pages.HomePage.HomePage - Waiting for cookie button...
+07:46:52.026 [main] INFO  pages.HomePage.HomePage - Successfully accepted cookies
+07:47:00.900 [main] ERROR utility.BrowserUtils - Element not visible: By.cssSelector: h1[data-test-id='header-h1'] - Error communicating with the remote browser. It may have died.
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b2516564d3b56659b3128ec5d514a137, findElement [using, value]]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52314}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52314/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b2516564d3b56659b3128ec5d514a137
+07:47:00.900 [main] ERROR utility.BrowserUtils - Failed to get element text: By.cssSelector: h1[data-test-id='header-h1'] - Error communicating with the remote browser. It may have died.
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b2516564d3b56659b3128ec5d514a137, findElement [using, value]]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52314}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52314/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b2516564d3b56659b3128ec5d514a137
+07:47:00.916 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+07:47:00.923 [main] ERROR stepDefs.Hooks - Error in teardown: Error communicating with the remote browser. It may have died.
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b2516564d3b56659b3128ec5d514a137, screenshot []]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52314}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52314/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b2516564d3b56659b3128ec5d514a137
+07:47:00.923 [main] INFO  stepDefs.Hooks - Closing driver
+07:47:01.101 [main] INFO  stepDefs.Hooks - Starting new test scenario
+07:47:03.802 [main] INFO  pages.HomePage.HomePage - Waiting for cookie button...
