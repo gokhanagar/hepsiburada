@@ -18,7 +18,7 @@ public class HomePageSteps extends BasePage {
     @Given("user navigate to hepsiburada.com")
     public void userNavigateToHepsiburadaCom() {
         driver.get(ConfigReader.get("base.url"));
-        waitForDOMStability(10);
+        //waitForDOMStability(10);
     }
 
     @Then("user verify home page is displayed")

@@ -18,15 +18,15 @@ public class Driver {
     private Driver() {}
 
     private static final ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
-    
+
     private static final Logger logger = LogManager.getLogger(Driver.class);
-    
+
     public static synchronized WebDriver getDriver() {
         if (driverPool.get() == null) {
             try {
                 String browser = ConfigReader.get("browser");
                 boolean isHeadless = ConfigReader.getBoolean("headless");
-                
+
                 WebDriver driver;
                 switch (browser.toLowerCase()) {
                     case "chrome" -> driver = createChromeDriver(isHeadless);
@@ -35,10 +35,10 @@ public class Driver {
                     case "safari" -> driver = createSafariDriver();
                     default -> throw new IllegalArgumentException("Unsupported browser: " + browser);
                 }
-                
+
                 setupDriver(driver);
                 driverPool.set(driver);
-                
+
             } catch (Exception e) {
                 logger.error("Failed to create WebDriver: {}", e.getMessage());
                 throw new RuntimeException("Failed to create WebDriver", e);
@@ -49,42 +49,50 @@ public class Driver {
 
     private static ChromeDriver createChromeDriver(boolean isHeadless) {
         ChromeOptions options = new ChromeOptions();
-        
+
         options.addArguments(
-            "--no-sandbox",
-            "--disable-dev-shm-usage",
-            "--disable-gpu",
-            "--disable-notifications",
-            "--remote-allow-origins=*",
-            "--ignore-certificate-errors",
-            "--start-maximized",
-            "--headless"
+                "--no-sandbox",
+                "--disable-dev-shm-usage",
+                "--disable-gpu",
+                "--disable-notifications",
+                "--remote-allow-origins=*",
+                "--ignore-certificate-errors",
+                "--start-maximized",
+                "--headless",
+                "--disable-infobars"
         );
 
-        if (System.getenv("CI") != null) {
+        if (System.getenv("CI") != null || isHeadless) {
             options.addArguments(
-                "--window-size=1920,1080",
-                "--disable-extensions",
-                "--disable-popup-blocking",
-                "--disable-blink-features=AutomationControlled"
+                    "--headless=new",
+                    "--window-size=1920,1080",
+                    "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36", // Güncel User-Agent
+                    "--disable-blink-features=AutomationControlled",
+                    "--disable-extensions",
+                    "--disable-web-security",
+                    "--disable-site-isolation-trials"
             );
-        } else if (isHeadless) {
-            options.addArguments("--headless=new");
         }
 
         options.setExperimentalOption("excludeSwitches",
-            new String[]{"enable-automation", "enable-logging"});
+                new String[]{"enable-automation", "enable-logging"});
 
         Map<String, Object> prefs = new HashMap<>();
+        prefs.put("profile.default_content_settings.popups", 0);
+        prefs.put("profile.default_content_setting_values.notifications", 2);
         prefs.put("credentials_enable_service", false);
         prefs.put("profile.password_manager_enabled", false);
+        prefs.put("webrtc.ip_handling_policy", "disable_non_proxied_udp");
 
         options.setExperimentalOption("prefs", prefs);
 
+        options.setPageLoadTimeout(Duration.ofSeconds(45)); // 30 -> 45 saniye
+        options.setImplicitWaitTimeout(Duration.ofSeconds(15)); // 10 -> 15 saniye
+        options.setScriptTimeout(Duration.ofSeconds(30));
+
         options.addArguments(
-            "--disable-cookie-encryption",
-            "--allow-running-insecure-content",
-            "--disable-web-security"
+                "--disable-cookie-encryption",
+                "--allow-running-insecure-content"
         );
 
         return new ChromeDriver(options);
@@ -92,11 +100,11 @@ public class Driver {
 
     private static FirefoxDriver createFirefoxDriver(boolean isHeadless) {
         FirefoxOptions options = new FirefoxOptions();
-        
+
         if (isHeadless) {
             options.addArguments("--headless");
         }
-        
+
         return new FirefoxDriver(options);
     }
 

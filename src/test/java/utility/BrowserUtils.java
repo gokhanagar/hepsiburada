@@ -99,10 +99,10 @@ public class BrowserUtils {
             int originalWindowCount = driver.getWindowHandles().size();
 
             WebElement element = elements.get(nextNumber);
-            
+
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
             waitForDOMStability(2);
-            
+
             try {
                 element.click();
             } catch (Exception e) {
@@ -112,8 +112,8 @@ public class BrowserUtils {
 
             try {
                 new WebDriverWait(driver, Duration.ofSeconds(10))
-                    .until(ExpectedConditions.numberOfWindowsToBe(originalWindowCount + 1));
-                
+                        .until(ExpectedConditions.numberOfWindowsToBe(originalWindowCount + 1));
+
                 Set<String> allWindows = driver.getWindowHandles();
                 for (String window : allWindows) {
                     if (!originalWindow.contentEquals(window)) {
@@ -141,19 +141,19 @@ public class BrowserUtils {
                 try {
                     JavascriptExecutor js = (JavascriptExecutor) driver;
                     return (Boolean) js.executeScript(
-                        "return new Promise(resolve => {" +
-                        "  let mutations = 0;" +
-                        "  const observer = new MutationObserver(() => mutations++);" +
-                        "  observer.observe(document, { " +
-                        "    childList: true," +
-                        "    subtree: true," +
-                        "    attributes: true" +
-                        "  });" +
-                        "  setTimeout(() => {" +
-                        "    observer.disconnect();" +
-                        "    resolve(mutations < 5);" +
-                        "  }, 500);" +
-                        "});"
+                            "return new Promise(resolve => {" +
+                                    "  let mutations = 0;" +
+                                    "  const observer = new MutationObserver(() => mutations++);" +
+                                    "  observer.observe(document, { " +
+                                    "    childList: true," +
+                                    "    subtree: true," +
+                                    "    attributes: true" +
+                                    "  });" +
+                                    "  setTimeout(() => {" +
+                                    "    observer.disconnect();" +
+                                    "    resolve(mutations < 5);" +
+                                    "  }, 500);" +
+                                    "});"
                     );
                 } catch (Exception e) {
                     logger.error("Error in DOM stability check: {}", e.getMessage());

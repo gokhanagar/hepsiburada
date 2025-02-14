@@ -11,7 +11,7 @@ import static utility.BrowserUtils.click;
 import static utility.BrowserUtils.waitForDOMStability;
 
 public class HomePage extends BasePage {
-     private static final Logger logger = LogManager.getLogger(HomePage.class);
+    private static final Logger logger = LogManager.getLogger(HomePage.class);
 
     private final By selectedPopularProductText = By.xpath("(//h3[@data-test-id='Recommendation-title'])[1]");
     private final By cookieButton = By.cssSelector("button[id='onetrust-accept-btn-handler']");

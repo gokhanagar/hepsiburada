@@ -2333,3 +2333,342 @@ Command: [40af37040ff5b8577d9eeb11756befbc, screenshot {}]
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61400}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61400/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: 40af37040ff5b8577d9eeb11756befbc
 12:00:19.211 [main] INFO  stepDefs.Hooks - Closing driver
+12:20:25.083 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:20:59.256 [main] ERROR utility.BrowserUtils - Element not clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62639}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62639/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7fa0c800f78ab396819dfb4418187c9c
+12:20:59.257 [main] ERROR utility.BrowserUtils - Failed to click element: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62639}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62639/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7fa0c800f78ab396819dfb4418187c9c
+12:20:59.257 [main] ERROR pages.HomePage.HomePage - Error in cookie handling: Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62639}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62639/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7fa0c800f78ab396819dfb4418187c9c
+12:21:29.790 [main] ERROR utility.BrowserUtils - Element not displayed: By.xpath: (//h3[@data-test-id='Recommendation-title'])[1] - no such element: Unable to locate element: {"method":"xpath","selector":"(//h3[@data-test-id='Recommendation-title'])[1]"}
+  (Session info: chrome=133.0.6943.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7fa0c800f78ab396819dfb4418187c9c, findElement {using=xpath, value=(//h3[@data-test-id='Recommendation-title'])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62639}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62639/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7fa0c800f78ab396819dfb4418187c9c
+12:21:29.810 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+12:21:30.066 [main] INFO  stepDefs.Hooks - Closing driver
+12:21:30.333 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:22:17.578 [main] ERROR utility.BrowserUtils - Element not clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62727}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62727/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f8827945a4382540ceb054cc0601d617
+12:22:17.579 [main] ERROR utility.BrowserUtils - Failed to click element: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62727}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62727/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f8827945a4382540ceb054cc0601d617
+12:22:17.579 [main] ERROR pages.HomePage.HomePage - Error in cookie handling: Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62727}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62727/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f8827945a4382540ceb054cc0601d617
+12:22:48.111 [main] ERROR utility.BrowserUtils - Element not displayed: By.xpath: (//h3[@data-test-id='Recommendation-title'])[1] - no such element: Unable to locate element: {"method":"xpath","selector":"(//h3[@data-test-id='Recommendation-title'])[1]"}
+  (Session info: chrome=133.0.6943.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f8827945a4382540ceb054cc0601d617, findElement {using=xpath, value=(//h3[@data-test-id='Recommendation-title'])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62727}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62727/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f8827945a4382540ceb054cc0601d617
+12:22:48.120 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+12:22:48.358 [main] INFO  stepDefs.Hooks - Closing driver
+12:22:48.499 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:23:24.197 [main] ERROR utility.BrowserUtils - Element not clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62816}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62816/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 255278f10a9450b44086658a3eb733d8
+12:23:24.198 [main] ERROR utility.BrowserUtils - Failed to click element: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62816}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62816/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 255278f10a9450b44086658a3eb733d8
+12:23:24.198 [main] ERROR pages.HomePage.HomePage - Error in cookie handling: Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62816}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62816/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 255278f10a9450b44086658a3eb733d8
+12:23:54.805 [main] ERROR utility.BrowserUtils - Element not displayed: By.xpath: (//h3[@data-test-id='Recommendation-title'])[1] - no such element: Unable to locate element: {"method":"xpath","selector":"(//h3[@data-test-id='Recommendation-title'])[1]"}
+  (Session info: chrome=133.0.6943.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [255278f10a9450b44086658a3eb733d8, findElement {using=xpath, value=(//h3[@data-test-id='Recommendation-title'])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62816}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62816/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 255278f10a9450b44086658a3eb733d8
+12:23:54.814 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+12:23:55.056 [main] INFO  stepDefs.Hooks - Closing driver
+12:23:58.825 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:24:31.734 [main] ERROR utility.BrowserUtils - Element not clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62960}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62960/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aa8e08bb138021431d574fa2a2853daa
+12:24:31.734 [main] ERROR utility.BrowserUtils - Failed to click element: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62960}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62960/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aa8e08bb138021431d574fa2a2853daa
+12:24:31.735 [main] ERROR pages.HomePage.HomePage - Error in cookie handling: Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62960}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62960/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aa8e08bb138021431d574fa2a2853daa
+12:25:02.275 [main] ERROR utility.BrowserUtils - Element not displayed: By.xpath: (//h3[@data-test-id='Recommendation-title'])[1] - no such element: Unable to locate element: {"method":"xpath","selector":"(//h3[@data-test-id='Recommendation-title'])[1]"}
+  (Session info: chrome=133.0.6943.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa8e08bb138021431d574fa2a2853daa, findElement {using=xpath, value=(//h3[@data-test-id='Recommendation-title'])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62960}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62960/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aa8e08bb138021431d574fa2a2853daa
+12:25:02.292 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+12:25:02.540 [main] INFO  stepDefs.Hooks - Closing driver
+12:25:26.538 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:26:25.775 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:26:59.919 [main] ERROR utility.BrowserUtils - Element not clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63189}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63189/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cf2f2ce094cedf71db212a8ec4a43bd8
+12:26:59.919 [main] ERROR utility.BrowserUtils - Failed to click element: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63189}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63189/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cf2f2ce094cedf71db212a8ec4a43bd8
+12:26:59.920 [main] ERROR pages.HomePage.HomePage - Error in cookie handling: Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63189}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63189/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cf2f2ce094cedf71db212a8ec4a43bd8
+12:27:30.493 [main] ERROR utility.BrowserUtils - Element not displayed: By.xpath: (//h3[@data-test-id='Recommendation-title'])[1] - no such element: Unable to locate element: {"method":"xpath","selector":"(//h3[@data-test-id='Recommendation-title'])[1]"}
+  (Session info: chrome=133.0.6943.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [cf2f2ce094cedf71db212a8ec4a43bd8, findElement {using=xpath, value=(//h3[@data-test-id='Recommendation-title'])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63189}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63189/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cf2f2ce094cedf71db212a8ec4a43bd8
+12:27:30.512 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+12:27:30.756 [main] INFO  stepDefs.Hooks - Closing driver
+12:29:19.761 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:30:14.953 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 63.850,87 TL
+12:30:21.536 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 63.850,87 TL
+12:30:21.564 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 63.850,87 TL
+12:30:21.564 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 63.850,87 TL
+12:30:21.565 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 63851
+12:30:21.566 [main] INFO  stepDefs.Hooks - Closing driver
+12:32:28.600 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:33:04.590 [main] ERROR utility.BrowserUtils - Element not clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64663}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64663/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6ff1fb826c00037a21f416f0749f48a2
+12:33:04.590 [main] ERROR utility.BrowserUtils - Failed to click element: By.cssSelector: button[id='onetrust-accept-btn-handler'] - Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64663}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64663/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6ff1fb826c00037a21f416f0749f48a2
+12:33:04.591 [main] ERROR pages.HomePage.HomePage - Error in cookie handling: Expected condition failed: waiting for element to be clickable: By.cssSelector: button[id='onetrust-accept-btn-handler'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64663}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64663/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6ff1fb826c00037a21f416f0749f48a2
+12:33:35.164 [main] ERROR utility.BrowserUtils - Element not displayed: By.xpath: (//h3[@data-test-id='Recommendation-title'])[1] - no such element: Unable to locate element: {"method":"xpath","selector":"(//h3[@data-test-id='Recommendation-title'])[1]"}
+  (Session info: chrome=133.0.6943.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6ff1fb826c00037a21f416f0749f48a2, findElement {using=xpath, value=(//h3[@data-test-id='Recommendation-title'])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64663}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64663/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6ff1fb826c00037a21f416f0749f48a2
+12:33:35.179 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+12:33:35.775 [main] INFO  stepDefs.Hooks - Closing driver
+12:35:34.233 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:36:07.567 [main] ERROR utility.BrowserUtils - Element not displayed: By.xpath: (//h3[@data-test-id='Recommendation-title'])[1] - no such element: Unable to locate element: {"method":"xpath","selector":"(//h3[@data-test-id='Recommendation-title'])[1]"}
+  (Session info: chrome=133.0.6943.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bd1411d8b809856a58a554cdb8219ab9, findElement {using=xpath, value=(//h3[@data-test-id='Recommendation-title'])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49494}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49494/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bd1411d8b809856a58a554cdb8219ab9
+12:36:07.582 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+12:36:08.222 [main] INFO  stepDefs.Hooks - Closing driver
+12:38:05.452 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:38:40.260 [main] ERROR utility.BrowserUtils - Element not displayed: By.xpath: (//h3[@data-test-id='Recommendation-title'])[1] - no such element: Unable to locate element: {"method":"xpath","selector":"(//h3[@data-test-id='Recommendation-title'])[1]"}
+  (Session info: chrome=133.0.6943.98)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [91f2e50a3fb9495bacff8381628a7460, findElement {using=xpath, value=(//h3[@data-test-id='Recommendation-title'])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:9222/devtool..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 10000, pageLoad: 30000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 91f2e50a3fb9495bacff8381628a7460
+12:38:40.273 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+12:38:40.811 [main] INFO  stepDefs.Hooks - Closing driver
+12:39:40.599 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:41:13.507 [main] ERROR pages.HomePage.HomePage - Page load check failed: Expected condition failed: waiting for at least one condition to be valid: visibility of element located by By.cssSelector: input[placeholder*='Ürün'] || visibility of element located by By.cssSelector: div[role='combobox'] || visibility of element located by By.cssSelector: main (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gokha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:9222/devtool..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 10000, pageLoad: 30000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2f018adb4b5cd093d07cea52a6b1f68c
+12:41:13.519 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+12:41:14.060 [main] INFO  stepDefs.Hooks - Closing driver
+12:42:30.768 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:43:34.412 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+12:43:34.995 [main] INFO  stepDefs.Hooks - Closing driver
+12:46:00.999 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:46:35.726 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+12:46:36.269 [main] INFO  stepDefs.Hooks - Closing driver
+12:47:57.928 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:48:35.174 [main] ERROR pages.HomePage.HomePage - Search box not found
+12:48:35.186 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+12:48:35.992 [main] INFO  stepDefs.Hooks - Closing driver
+12:49:58.500 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:52:04.486 [main] INFO  pages.HomePage.HomePage - Found search box with locator: By.cssSelector: [placeholder*='Ürün']
+12:54:07.908 [main] INFO  pages.HomePage.HomePage - Found search box with locator: By.cssSelector: [placeholder*='Ürün']
+12:54:56.298 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 58.599,00 TL
+12:55:01.805 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 58.599,00 TL
+12:55:01.835 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 58.599,00 TL
+12:55:01.836 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 58.599,00 TL
+12:55:01.836 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 58599
+12:55:01.837 [main] INFO  stepDefs.Hooks - Closing driver
+12:57:29.713 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:57:36.557 [main] ERROR pages.HomePage.HomePage - URL check failed. Current URL: https://www.trendyol.com/en/select-country
+12:57:36.629 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+12:57:37.876 [main] INFO  stepDefs.Hooks - Closing driver
+12:58:06.477 [main] INFO  stepDefs.Hooks - Starting new test scenario
+12:58:12.840 [main] ERROR pages.HomePage.HomePage - URL check failed. Current URL: https://www.trendyol.com/en/select-country
+12:58:12.855 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+12:58:14.145 [main] INFO  stepDefs.Hooks - Closing driver
+12:59:18.099 [main] INFO  stepDefs.Hooks - Starting new test scenario
+13:02:19.709 [main] INFO  stepDefs.Hooks - Starting new test scenario
+13:04:58.712 [main] ERROR pages.HomePage.HomePage - No search box found with any locator
+13:04:58.735 [main] ERROR pages.HomePage.HomePage - Page source: <html lang="en"><head>
+  <meta charset="UTF-8">
+  
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css">
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32"><link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16">
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199V17c0 .549.428 1.139.951 1.307l1.197.387C5.672 18.861 6.55 19 7.1 19h5.8c.
+13:04:58.766 [main] WARN  stepDefs.Hooks - Scenario failed, taking screenshot
+13:04:59.312 [main] INFO  stepDefs.Hooks - Closing driver
+13:14:16.824 [main] INFO  stepDefs.Hooks - Starting new test scenario
+13:15:13.636 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 91.429,00 TL
+13:15:18.660 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 91.429,00 TL
+13:15:18.695 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 91.429,00 TL
+13:15:18.696 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 91.429,00 TL
+13:15:18.696 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 91429
+13:15:18.697 [main] INFO  stepDefs.Hooks - Closing driver
+13:18:35.086 [main] INFO  stepDefs.Hooks - Starting new test scenario
+13:19:31.366 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found default price: 63.850,87 TL
+13:19:37.890 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 63.850,87 TL
+13:19:37.918 [main] INFO  pages.ProductCartPage.ProductCartPage - Product price on cart: 63.850,87 TL
+13:19:37.919 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 63.850,87 TL
+13:19:37.919 [main] INFO  pages.ProductCartPage.ProductCartPage - Converted cart price to number: 63851
+13:19:37.921 [main] INFO  stepDefs.Hooks - Closing driver
+13:19:38.270 [main] INFO  stepDefs.Hooks - Starting new test scenario
+13:20:02.607 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found special price: 4.828,50 TL
+13:20:02.608 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for other sellers...
+13:20:02.668 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found other sellers button, clicking...
+13:20:04.518 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has other sellers result: true
+13:20:04.519 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Getting main product price: 4.828,50 TL
+13:20:04.519 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 4.828,50 TL
+13:20:05.574 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found 40 price elements
+13:20:05.585 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 5.180,00 TL
+13:20:05.597 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 2.099,00 TL
+13:20:05.608 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 7.140,00 TL
+13:20:05.618 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 6.190,00 TL
+13:20:05.629 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 6.840,00 TL
+13:20:05.640 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 5.320,00 TL
+13:20:05.649 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 5.320,00 TL
+13:20:05.660 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 5.420,00 TL
+13:20:05.740 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 5.365,00 TL
+13:20:05.770 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 3.999,00 TL
+13:20:05.789 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 3.929,00 TL
+13:20:05.920 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 5.365,00 TL
+13:20:05.929 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 4.899,02 TL
+13:20:05.938 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 5.180,00 TL
+13:20:05.946 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Converting price text: 5.200,00 TL
+13:20:05.947 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Processed prices (excluding main product): [5180, 2099, 7140, 6190, 6840, 5320, 5320, 5420, 5365, 3999, 3929, 5365, 4899, 5180, 5200]
+13:20:05.947 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Other seller prices: [5180, 2099, 7140, 6190, 6840, 5320, 5320, 5420, 5365, 3999, 3929, 5365, 4899, 5180, 5200]
+13:20:05.947 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Minimum other seller price: 2099
+13:20:05.947 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Main product price: 4829
+13:20:05.947 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found better price from other seller, adding to cart...
+13:20:05.947 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Looking for button with price: 2099
+13:20:06.469 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Total prices: 15
+13:20:06.469 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Total buttons found: 5
+13:20:06.469 [main] INFO  pages.OtherSellersPage.OtherSellersPage - Found matching price at index: 1
+13:20:07.070 [main] INFO  stepDefs.Hooks - Closing driver
+13:20:07.256 [main] INFO  stepDefs.Hooks - Starting new test scenario
+13:20:28.984 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Checking for reviews
+13:20:32.161 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Found no review text: Henüz değerlendirilmemiş
+13:20:32.181 [main] INFO  pages.ProductDetailPage.ProductDetailPage - Has review result: false
+13:20:32.182 [main] WARN  pages.ProductDetailPage.ProductDetailPage - No reviews found. Skipping remaining steps.
+13:20:32.183 [main] INFO  stepDefs.Hooks - Closing driver
