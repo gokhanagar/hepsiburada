@@ -21,20 +21,8 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
-    - name: Setup Chrome and ChromeDriver
-      run: |
-        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-        sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/sources.list.d/google.list'
-        sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
-        CHROME_VERSION=$(google-chrome --version | cut -d " " -f3 | cut -d "." -f1)
-        CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-        wget -N "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
-        unzip chromedriver_linux64.zip
-        chmod +x chromedriver
-        sudo mv chromedriver /usr/local/bin/
-        google-chrome --version
-        chromedriver --version
+    - name: Setup Chrome
+      uses: browser-actions/setup-chrome@v1
         
     - name: Run Tests
       run: |
@@ -45,21 +33,12 @@ jobs:
         
         mvn clean test \
           -Dbrowser=chrome \
-          -Dheadless=true \
-          -Dwebdriver.chrome.whitelistedIps="" \
-          -Dselenium.window-size=1920,1080
-    
-    - name: Generate Allure Report
-      if: always()
-      run: |
-        mvn allure:report
-        mkdir -p allure-results
-        cp -r target/allure-results/* allure-results/
+          -Dheadless=true
     
     - name: Store Allure Results
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: allure-results
-        path: allure-results
+        path: target/allure-results
         retention-days: 30
